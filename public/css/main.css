@@ -1,5 +1,3 @@
-/*  Styling for every page needing a proper header and footer  */
-
 /*  VARIABLES  */
 :root { 
     --dark: #545F66;
@@ -10,6 +8,38 @@
     --touches: #B07156; 
 }
 
+/*  BODY AND TYPOGRAPHY  */
+body { 
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 { 
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+h2 { 
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+a { 
+    color: var(--offWhite);
+    text-decoration: none;
+}
+
+ul { 
+    padding: 0;
+    list-style: none;
+}
+
+/*  EVERYPAGE  */
 .nav { 
     width: 100%;
     height: 75px; 
@@ -34,6 +64,14 @@
 }
 
 
+.content { 
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .footer-nav { 
     width: 100%;
     height: 2rem;
@@ -50,4 +88,57 @@
     font-size: .8rem;
     display: flex;
     align-items: center;
+}
+
+
+/*  LOGIN  */
+.login-forms { 
+    display: flex;
+}
+/* div around the two forms */
+
+.login-card { 
+    height: 300px;
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-card h2 { 
+    margin: 10px;
+    text-align: center;
+}
+
+.form-group { 
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group label { 
+    margin-right: 8px;
+    margin-bottom: 5px;
+}
+
+.form-group input { 
+    border-radius: 4px;
+}
+
+.login-card .form-group-btn { 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+} 
+/* Positions button at the center */
+
+.form-group-btn button { 
+    width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    align-content: center;
 }
