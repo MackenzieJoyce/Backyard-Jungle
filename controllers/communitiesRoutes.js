@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { Plants } = require('../models');
 
-router.get('/communitiesRoutes', (req, res) => res.render('communities'));
+// router.get('/communities', (req, res) => res.render('communities'));
+router.get('/', async (req, res) => {
+    console.log('TEST');
+    res.render('home');
+})
 
 module.exports = router;
