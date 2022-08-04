@@ -1,11 +1,12 @@
 /*  VARIABLES  */
 :root { 
-    --dark: rgb(84, 95, 102);
-    --middle: rgb(141, 170, 145);
-    --light: rgb(255, 231, 231);
-    --offWhite: rgb(255, 254, 232);
-    --standout:rgb(204, 93, 49);
-    --touches: rgb(176, 113, 86); 
+    --dark: #223F4F;
+    --dark-middle: #647646;
+    --middle: #A8B088;
+    --light: #ffe7e7;
+    --offWhite: #fffee8;
+    --standout:#996048;
+    --touches: #F0978F; 
 }
 
 /*  BODY AND TYPOGRAPHY  */
