@@ -1,11 +1,12 @@
 /*  VARIABLES  */
 :root { 
-    --dark: #545F66;
-    --middle: #8DAA91;
+    --dark: #223F4F;
+    --dark-middle: #647646;
+    --middle: #A8B088;
     --light: #ffe7e7;
-    --offWhite: rgb(255, 254, 232);
-    --standout:#CC5D31;
-    --touches: #B07156; 
+    --offWhite: #fffee8;
+    --standout:#996048;
+    --touches: #F0978F; 
 }
 
 /*  BODY AND TYPOGRAPHY  */
