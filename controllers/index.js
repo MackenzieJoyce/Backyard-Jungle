@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const categoryRoutes = require('./communities');
+const communityRoutes = require('./communities');
 
-router.use('/communities', categoryRoutes);
+router.use('/communities', communityRoutes);
 
 module.exports = router;
