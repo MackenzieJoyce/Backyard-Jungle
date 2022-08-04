@@ -3,14 +3,8 @@ const sequelize = require('../config/connection');
 
 class Plants extends Model {}
 
-Post.init(
+Plants.init(
   {
-    id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     Scientific_Name: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -26,9 +20,8 @@ Post.init(
   },
   {
     sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'Plants',
+    modelName: 'plants',
+    timestamps: false
   }
 );
 
