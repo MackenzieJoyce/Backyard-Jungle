@@ -18,6 +18,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /*ANA TESTING*/
+    background-color: black;
 }
 
 h1 { 

@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
@@ -17,8 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-
 app.use(routes);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
