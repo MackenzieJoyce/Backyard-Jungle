@@ -17,8 +17,7 @@ Post.init(
     },
     Common_Name: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: DataTypes.NOW,
+        allowNull: true,
       },
     Family: {
       type: DataTypes.STRING,
