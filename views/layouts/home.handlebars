@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
@@ -42,12 +42,14 @@
                     <h2>Join Our Growing Community Of Plant Lovers</h2>
                     <div class="join-btn-box">
                         <button class="btn btn-primary" type="submit">Sign up</button>
-                        <button class="btn btn-primary" type="submit">Login</button>
+                        <button class="btn btn-primary loginBtn" type="submit">Login</button>
                     </div>
                 </div>
             </div>
         </div>
-
+{{!-- {{> (whichPartial)}} --}}
+{{!-- {{> test}} --}}
+{{> (whichPartial)}}
         <footer>
             <ul class="footer-nav">
                 <li>
@@ -68,6 +70,7 @@
             </ul>
         </footer>
     </main>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>
