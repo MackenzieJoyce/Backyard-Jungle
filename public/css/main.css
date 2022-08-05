@@ -6,20 +6,19 @@
     --light: #ffe7e7;
     --offWhite: #fffee8;
     --standout:#996048;
-    --touches: #F0978F; 
+    --touches: #e9857c; 
 }
 
 /*  BODY AND TYPOGRAPHY  */
 body { 
     margin: 0;
     padding: 0;
+    background-color: var(--light);
     font-size: 16px;
     font-family: 'Public Sans', sans-serif;    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*ANA TESTING*/
-    background-color: black;
 }
 
 h1 { 
@@ -30,6 +29,10 @@ h1 {
 h2 { 
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+h1, h2 { 
+    letter-spacing: .15rem;
 }
 
 a { 
@@ -130,7 +133,7 @@ ul {
     align-items: center;
 }
 
-.teaser-card { 
+.teaser-card, .category-card { 
     width: 30%;
     height: 200px;
     padding: 20px;
@@ -138,9 +141,10 @@ ul {
     border: 1px solid var(--dark);
     border-radius: 3px;
     transition: .5s;
-}
+} 
+/* Includes category card found in the category.handlebars */
 
-.teaser-card:hover { 
+.teaser-card:hover, .category-card { 
     border: 1.8px solid var(--dark);
     transform: scale(1.1);
     cursor: pointer;
@@ -210,4 +214,29 @@ ul {
     padding: 10px;
     border-radius: 20px;
     align-content: center;
+}
+
+
+
+/*  CATEGORIES  */
+.categories-intro { 
+    width: 100%;
+    padding: 60px 30px 20px 30px;
+    background-color: var(--dark-middle);
+    color: var(--light);
+    text-align: center;
+}
+
+.categories-intro h1 { 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: var(--touches);
+    border-bottom: 2px solid #223F4F;
+}
+
+.category-card-box { 
+    width: 100%;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
 }
