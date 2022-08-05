@@ -5,7 +5,7 @@ const { Op } = require("sequelize");
 
 //figure out in what format to pass in data and test if teh query actually works, also need || && separate properties one of the names might not match the search string
 router.post('/', async (req, res) => {
-    console.log(req.body.plant)
+    // console.log(req.body.plant)
     try {
         const plantData = await Plants.findAll({
             where: {
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
                         [Op.like]: `%${req.body.plant}`
                     }
                 },
-                
+
                 {
                     Common_Name: {
                         [Op.like]: `%${req.body.plant}`
@@ -26,12 +26,13 @@ router.post('/', async (req, res) => {
         });
 
         // Serialize data so the template can read it
-        const plant = plantData.map((post) => post.get({ plain: true }));
+        const plants = plantData.map((plant) => plant.get({ plain: true }));
 
         // Pass serialized data into template
-        // res.render('place holder', { plant });
-        // res.end(JSON.stringify(plantData));
-        res.json(plantData);
+        console.log(plants);
+        console.log(plants[0].Common_Name);
+        //apparantly all fo the parameters go into the same object container as layout, took me hours to figure out.
+        res.render('test', { layout: 'home', plants } );
     } catch (err) {
         res.status(500).json(err);
     }
