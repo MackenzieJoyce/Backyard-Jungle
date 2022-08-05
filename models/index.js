@@ -1,4 +1,7 @@
 const Plants = require('./Plants');
+const Post = require('./post')
+const User = require('./User')
+const Comment = require('./comment')
 
 // const Post = require('./Post');
 // const Comment = require('./comment');
@@ -19,5 +22,8 @@ const Plants = require('./Plants');
 // });
 
 module.exports = {
-    Plants
+    Plants,
+    Post,
+    User,
+    Comment
 };
