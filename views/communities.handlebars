@@ -1,6 +1,18 @@
-<div class="card" style="width: 18rem;">
-    <img src="/images/{{category-photo.[0].filename}}" class="card-img-top" alt="{{paintings.[0].at-text}}">
+<div class="categories-intro">
+    <h1>Find Your Community</h2>
+    <p>Join the latest conversations in the plant world. Get advice, help others, or just chat!</p>
 </div>
 
 
-<!-- ON HOVER display the description of the category in an overlay 
+<div class="category-card-box">
+    <div class="category-card" style="width: 18rem;">
+        <img src="/images/{{category-photo.[0].filename}}" class="card-img-top" alt="{{paintings.[0].at-text}}">
+        <h3>{{category-photo.[0].title}}</h3>
+        <!-- <div class="mask">
+            <h3>{{category-photo.[0].title}}</h3>
+            <p>{{category-photo.[0].description}}</p>
+        </div> -->
+        <!-- ON HOVER https://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/ -->
+        <!-- POP ON SCREEN https://codepen.io/zavoloklom/pen/ZEmBGR -->
+    </div>
+</div>
