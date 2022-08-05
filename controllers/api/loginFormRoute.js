@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
-router.post('/logform', async (req, res) => {
+router.post('/', async (req, res) => {
+    //this doesn't do anything at the moment (Ana)
     try {
         res.render('test', {layout: 'home'});
     } catch (err) {

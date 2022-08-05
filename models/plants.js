@@ -13,10 +13,6 @@ Plants.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
-    Family: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
   {
     sequelize,
