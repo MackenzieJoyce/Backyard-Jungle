@@ -1,4 +1,4 @@
-const {User} = require("../models/plants");
+const {User} = require("../models/");
 
 const userData = [
     {
