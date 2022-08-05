@@ -14,6 +14,7 @@ router.post('/', async (req, res) => {
                         [Op.like]: `%${req.body.plant}`
                     }
                 },
+                
                 {
                     Common_Name: {
                         [Op.like]: `%${req.body.plant}`
