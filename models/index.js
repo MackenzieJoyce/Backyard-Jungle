@@ -1,7 +1,8 @@
 const Plants = require('./plants');
-const Post = require('./Post');
+const Post = require('./post');
 const Comment = require('./comment');
 const User = require('./User');
+
 
 Post.belongsTo(User, {
     foreignKey: 'userId',
