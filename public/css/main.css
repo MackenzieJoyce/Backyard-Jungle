@@ -240,3 +240,49 @@ ul {
     display: flex;
     justify-content: center;
 }
+
+
+
+
+/*  Profile  */
+.profile-dashboard { 
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+}
+
+.profile-info { 
+    width: 30%;
+    padding: 30px;
+    padding-right: 30px;
+}
+
+.profile-info img { 
+    width: 50%;
+    border-radius: 50px;
+    border: 1px solid var(--dark);
+}
+
+.profile-info h3 { 
+    padding: 30px 0;
+}
+
+.profile-details { 
+    padding: 30px 0 30px 30px;
+}
+
+.profile-details h3 { 
+    padding-bottom: 30px;
+}
+
+.profile-details p { 
+    padding-bottom: 60px;
+}
+
+.garden-tile card,
+.post-tile card { 
+    width: 20%;
+    padding: 20px;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
