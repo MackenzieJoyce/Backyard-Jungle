@@ -2,7 +2,11 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
+<<<<<<< HEAD
   console.log("USER ROUTE TEST!")
+=======
+  console.log('USERROUTES')
+>>>>>>> 7d6ded065e7cd02ff659661bf3961f421a5ffbfb
   try {
     const userData = await User.create(req.body);
 

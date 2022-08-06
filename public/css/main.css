@@ -13,12 +13,10 @@
 body { 
     margin: 0;
     padding: 0;
+    min-height: 100%;
     background-color: var(--light);
     font-size: 16px;
     font-family: 'Public Sans', sans-serif;    
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 h1 { 
@@ -40,8 +38,12 @@ a {
     text-decoration: none;
 }
 
+a:hover { 
+    text-decoration: none;
+    color: var(--dark);
+}
+
 ul { 
-    padding: 0;
     list-style: none;
 }
 
@@ -63,26 +65,27 @@ ul {
 .nav { 
     width: 100%;
     height: 75px; 
-    padding: 10px;
+    padding: 0 10px;
     background-color: var(--middle);
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.nav-link { 
-    width: 75px;
-    height: 50px;
-    margin: 5px;
-    padding: 20px 30px 8px 30px;
+.nav-item { 
+    margin: 0 10px;
 }
 
 .nav-link:hover { 
     color: var(--dark);
     background-color: #c7efcd;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+.nav .input-group { 
+    width: 300px;
+}
 
 .content { 
     display: flex;
@@ -90,19 +93,21 @@ ul {
     align-items: center;
 }
 
-
-.footer-nav { 
+footer { 
     width: 100%;
-    height: 2rem;
     padding: 10px 0;
     background-color: var(--middle);
     position: absolute;
     bottom: 0;
+}
+
+footer ul { 
+    margin: 0;
     display: flex;
     justify-content: center;
 }
 
-.footer-nav li { 
+footer ul li { 
     margin: 0 20px;
     font-size: .8rem;
     display: flex;
@@ -254,7 +259,6 @@ ul {
 .profile-info { 
     width: 30%;
     padding: 30px;
-    padding-right: 30px;
 }
 
 .profile-info img { 
@@ -284,6 +288,13 @@ ul {
     padding: 20px;
     border: 1px solid var(--dark);
     border-radius: 5px;
+}
+
+.widgets { 
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--dark);
 }
 
 

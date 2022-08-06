@@ -1,6 +1,6 @@
-const router = require('express').Router();
-const { Comment, User, Collection } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require('express').Router()
+const { Comment, User, Collection } = require('../../models')
+const withAuth = require('../../utils/auth')
 
 /////THIS IS GETTING THE COMMENTS
 
@@ -11,23 +11,20 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['user_name'],
-        },
-      ],
-    });
+          attributes: ['user_name']
+        }
+      ]
+    })
 
     // Serialize data so the template can read it
-    const comments = commentData.map((comment) => comment.get({ plain: true }));
+    const comments = commentData.map((comment) => comment.get({ plain: true }))
 
     // Pass serialized data and session flag into template
-    res.render('account-dashbaord', { 
-      comments, 
-      logged_in: req.session.logged_in 
-    });
+    res.render('profile-dashboard', { layout: 'main' })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 router.get('/comment/:id', async (req, res) => {
   try {
@@ -35,21 +32,21 @@ router.get('/comment/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['user_name'],
-        },
-      ],
-    });
+          attributes: ['user_name']
+        }
+      ]
+    })
 
-    const comment = commentData.get({ plain: true });
+    const comment = commentData.get({ plain: true })
 
     res.render('comment', {
       ...comment,
       logged_in: req.session.logged_in
-    });
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 //THIS IS GETTING THE COLLECTION INFO
 
@@ -60,23 +57,25 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Collection,
-          attributes: ['user_name'],
-        },
-      ],
-    });
+          attributes: ['user_name']
+        }
+      ]
+    })
 
     // Serialize data so the template can read it
-    const collection = collectionData.map((collection) => collection.get({ plain: true }));
+    const collection = collectionData.map((collection) =>
+      collection.get({ plain: true })
+    )
 
     // Pass serialized data and session flag into template
-    res.render('account-dashbaord', { 
-      collection, 
-      logged_in: req.session.logged_in 
-    });
+    res.render('account-dashbaord', {
+      collection,
+      logged_in: req.session.logged_in
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 router.get('/collection/:id', async (req, res) => {
   try {
@@ -84,22 +83,21 @@ router.get('/collection/:id', async (req, res) => {
       include: [
         {
           model: Collection,
-          attributes: ['PLACEHOLDER'],
-        },
-      ],
-    });
+          attributes: ['PLACEHOLDER']
+        }
+      ]
+    })
 
-    const collection = collectionData.get({ plain: true });
+    const collection = collectionData.get({ plain: true })
 
     res.render('collection', {
       ...collection,
       logged_in: req.session.logged_in
-    });
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
-
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -107,28 +105,41 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comment }, { model: Collection }],
-    });
+      include: [{ model: Comment }, { model: Collection }]
+    })
 
-    const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true })
 
     res.render('profile', {
       ...user,
       logged_in: true
-    });
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
+    res.redirect('/profile')
+    return
   }
 
-  res.render('login');
-});
+  res.render('login')
+})
 
-module.exports = router;
+router.get('/profile/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id)
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this username!' })
+      return
+    }
+    const user = userData.get({ plain: true })
+    res.json(user)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+module.exports = router
