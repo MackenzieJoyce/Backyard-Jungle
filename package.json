@@ -7,11 +7,19 @@
         "bcrypt": "^5.0.1",
         "connect-session-sequelize": "^7.1.4",
         "dotenv": "^8.2.0",
+<<<<<<< HEAD
         "express": "^4.18.1",
+=======
+        "express": "^4.17.1",
+>>>>>>> 23ecdb424655d2e221babe02892928e4069a10d7
         "express-handlebars": "^5.2.0",
         "express-session": "^1.17.3",
         "handlebars": "^4.7.6",
         "mysql2": "^2.2.5",
+<<<<<<< HEAD
+=======
+        "node-fetch": "^2.6.1",
+>>>>>>> 23ecdb424655d2e221babe02892928e4069a10d7
         "sequelize": "^6.3.5"
     }
 }

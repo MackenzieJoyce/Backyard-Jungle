@@ -1,6 +1,8 @@
-const router = require('express').Router()
-const { Comment, User } = require('../../models')
-const withAuth = require('../../utils/auth')
+const router = require('express').Router();
+const { Comment, User, Collection } = require('../models');
+const withAuth = require('../utils/auth');
+
+/////THIS IS GETTING THE COMMENTS
 
 router.get('/', async (req, res) => {
   try {
@@ -46,14 +48,64 @@ router.get('/comment/:id', async (req, res) => {
   }
 })
 
+//THIS IS GETTING THE COLLECTION INFO
+
+router.get('/', async (req, res) => {
+  try {
+    // Get all collections and JOIN with user data
+    const collectionData = await Collection.findAll({
+      include: [
+        {
+          model: Collection,
+          attributes: ['user_name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const collection = collectionData.map((collection) => collection.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('account-dashbaord', { 
+      collection, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/collection/:id', async (req, res) => {
+  try {
+    const collectionData = await Collection.findByPk(req.params.id, {
+      include: [
+        {
+          model: Collection,
+          attributes: ['PLACEHOLDER'],
+        },
+      ],
+    });
+
+    const collection = collectionData.get({ plain: true });
+
+    res.render('collection', {
+      ...collection,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comment }]
-    })
+      include: [{ model: Comment }, { model: Collection }],
+    });
 
     const user = userData.get({ plain: true })
 
