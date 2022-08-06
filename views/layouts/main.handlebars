@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backyard Jungle</title>
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,11 +23,17 @@
                   <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>                
+                </li>
+                <li class="nav-item">
                     {{#if logged_in}}
-                    <a href="/profile">profile</a> |
-                    <button class="no-button" id="logout">logout</button>
+                    <a href="/profile"><img src="{{ username.img }}" alt=""></a> |
+                    <button class="no-button nav-link" id="logout">Logout</button>
                     {{else}}
-                    <a href="/login">login</a>
+                    <a class="nav-link" href="/login">Login</a>
                     {{/if}}                
                 </li>
               </ul>
