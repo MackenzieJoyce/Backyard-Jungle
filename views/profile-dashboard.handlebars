@@ -5,19 +5,16 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
+        {{ < tipe-tile }}
     </aside>
 
-    <section class="profile-details">
+    <section id="profile-details">
         <div>
             <h3>My Garden</h3>
             <p class="garden-tile">{{> profile-garden-tiles}}</p>
         </div>
 
-        <div>
-            <h3>My Posts</h3>
-            <p class="post-tile">{{> post-box}}
-            </p>
-        </div>
+
         
     </section>
 

@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backyard Jungle</title>
+    {{!-- RESET STYLING --}}
     <link rel="stylesheet" href="/public/css/reset.css">
-    <link rel="stylesheet" href="/css/main.css">
+    {{!-- HANDLEBARS --}}
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.js"></script>
+    {{!-- BOOTSTRAP --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    {{!-- GOOGLE FONTS --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;900&display=swap" rel="stylesheet">
-
+    {{!-- MAIN STYLING --}}
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <main>
@@ -58,5 +63,8 @@
             </ul>
         </footer>
     </main>
+
+    <script src="/js/tips.js"></script>
+    <script src="server.js"></script>
 </body>
 </html>
