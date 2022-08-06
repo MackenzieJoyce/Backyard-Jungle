@@ -129,4 +129,17 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
+router.get('/profile/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id)
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this username!' })
+      return
+    }
+    const user = userData.get({ plain: true })
+    res.json(user)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 module.exports = router
