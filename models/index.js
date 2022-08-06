@@ -2,6 +2,7 @@ const Plants = require('./plants');
 const Post = require('./post');
 const Comment = require('./comment');
 const User = require('./User');
+const Collection = require('./collection')
 
 
 Post.belongsTo(User, {
@@ -30,4 +31,5 @@ module.exports = {
     Post,
     Comment,
     User,
+    Collection,
 };

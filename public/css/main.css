@@ -4,7 +4,7 @@
     --dark-middle: #647646;
     --middle: #A8B088;
     --light: #ffe7e7;
-    --offWhite: #fffee8;
+    --offWhite: #fffef3;
     --standout:#996048;
     --touches: #e9857c; 
 }
@@ -153,7 +153,8 @@ footer ul li {
 } 
 /* Includes category card found in the category.handlebars */
 
-.teaser-card:hover, .category-card { 
+.teaser-card:hover, .category-card:hover, .category-list:hover, 
+.forum-box .card:hover { 
     border: 1.8px solid var(--dark);
     transform: scale(1.1);
     cursor: pointer;
@@ -252,7 +253,6 @@ footer ul li {
 
 
 
-
 /*  Profile  */
 .profile-dashboard { 
     width: 100%;
@@ -288,10 +288,65 @@ footer ul li {
     padding-bottom: 60px;
 }
 
-.garden-tile card,
-.post-tile card { 
+.garden-tile card{ 
     width: 20%;
     padding: 20px;
     border: 1px solid var(--dark);
     border-radius: 5px;
+}
+
+.widgets { 
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--dark);
+}
+
+
+
+/*  FORUM  */ 
+.specific-category-list { 
+    width: 100%; 
+    display: flex;
+}
+
+.list-group, .forum-box { 
+    margin: 30px 30px 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-group { 
+    width: 20%;
+}
+
+.list-group h3, 
+.forum-box h3 { 
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--dark);
+    text-align: center;
+    font-weight: 700;
+}
+
+.list-group-item { 
+    width: 100%;
+    background-color: var(--middle);
+    color: var(--offWhite);
+    transition: .5s;
+}
+
+.forum-box { 
+    width: 80%;
+}
+
+.forum-box .card { 
+    width: 100%;
+    transition: .5s;
+}
+
+.forum-box .card h5, 
+.forum-box .card h6 { 
+    margin-bottom: 1.3rem;
 }

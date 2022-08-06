@@ -5,6 +5,12 @@ class Plants extends Model {}
 
 Plants.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     Scientific_Name: {
       type: DataTypes.STRING,
       allowNull: true,
