@@ -341,3 +341,11 @@ ul {
 .forum-box .card h6 { 
     margin-bottom: 1.3rem;
 }
+
+.add-post { 
+    background-color: var(--dark);
+    color: var(--touches);
+    font-weight: 800;
+    border-radius: 50px;
+    border: 1px solid var(--light);
+}
