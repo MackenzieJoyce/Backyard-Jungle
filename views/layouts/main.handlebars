@@ -24,6 +24,12 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">About</a>
                 </li>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                    </div>
+                </div>
                 <li class="nav-item">
                     {{#if logged_in}}
                     <a href="/profile"><img src="{{ username.img }}" alt=""></a> |

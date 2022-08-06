@@ -74,12 +74,19 @@ ul {
     align-items: center;
 }
 
+.nav-item { 
+    margin: 0 10px;
+}
 
 .nav-link:hover { 
     color: var(--dark);
     background-color: #c7efcd;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.nav .input-group { 
+    width: 300px;
 }
 
 .content { 
