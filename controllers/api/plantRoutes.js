@@ -29,9 +29,11 @@ router.post('/', async (req, res) => {
         }
     });
 
+
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
-    console.log(plants[0].Common_Name.split(' ').join('+'));
+
+    console.log(plantData);
 
     plants[0]['URL'] = await fetch('https://www.googleapis.com/customsearch/v1?num=1&key='
     + apiKey
@@ -51,7 +53,7 @@ router.post('/', async (req, res) => {
     console.log(plants);
     // console.log(plants[0].Common_Name.split(' ').join('%'));
     //apparantly all fo the parameters go into the same object container as layout, took me hours to figure out.
-    res.render('test', { layout: 'home', plants });
+    res.render('test', { layout: 'testlayout', plants });
 
 });
 
