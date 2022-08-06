@@ -1,4 +1,6 @@
-window.onload = function random_tips(tips) {
+const tips = document.getElementById('tips')
+
+function random_tips(tips) {
   return tips[Math.floor(Math.random() * items.length)]
 }
 
@@ -13,4 +15,5 @@ var items = [
   'Be sure to dust your plants.',
   'Egg shells are a great source of nutrients.'
 ]
-console.log(random_tips(tips))
+console.log(random_tips(items))
+tips.innerText = random_tips(items)

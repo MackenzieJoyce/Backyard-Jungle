@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const comments = commentData.map((comment) => comment.get({ plain: true }))
 
     // Pass serialized data and session flag into template
-    res.render('test', { layout: 'main' })
+    res.render('profile-dashboard', { layout: 'main' })
   } catch (err) {
     res.status(500).json(err)
   }
