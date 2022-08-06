@@ -286,6 +286,13 @@ ul {
     border-radius: 5px;
 }
 
+.widgets { 
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--dark);
+}
+
 
 
 /*  FORUM  */ 

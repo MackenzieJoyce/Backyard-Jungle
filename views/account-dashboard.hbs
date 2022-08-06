@@ -5,6 +5,13 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
+        
+        <section class="widgets">
+            <div class="tips">
+                <h3>Tips</h3>
+                <p>{{> (random_tips(tips)) }}</p>
+            </div>
+        </section>
     </aside>
 
     <section class="profile-details">
@@ -21,8 +28,4 @@
         
     </section>
 
-<!--            <div>
-        Weather App would go down here 
-    </div> 
--->
 </div>
