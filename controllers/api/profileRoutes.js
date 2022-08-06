@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Comment, User, Collection } = require('../models');
-const withAuth = require('../utils/auth');
+const { Comment, User, Collection } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 /////THIS IS GETTING THE COMMENTS
 
