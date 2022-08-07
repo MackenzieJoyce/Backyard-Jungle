@@ -274,7 +274,7 @@ footer ul li {
 }
 
 .profile-info img { 
-    width: 100%;
+    width: 75%;
     border-radius: 50%;
     border: 1px solid var(--dark);
 }
