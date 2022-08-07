@@ -153,6 +153,10 @@ footer ul li {
     align-items: center;
 }
 
+.teaser-card img { 
+    width: 200px;
+}
+
 .teaser-card, .category-card { 
     width: 30%;
     height: 200px;
