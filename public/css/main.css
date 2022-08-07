@@ -262,7 +262,6 @@ footer ul li {
 
 .profile-info img { 
     width: 50%;
-    height: 300px;
     border-radius: 50px;
     border: 1px solid var(--dark);
 }
