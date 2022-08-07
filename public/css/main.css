@@ -129,12 +129,17 @@ footer ul li {
 .welcome-hero { 
     height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.teaser,
-.join { 
+.welcome-hero button { 
+    width: 100px;
+    margin: 30px;
+}
+
+.teaser { 
     padding: 15px 0;
     margin: 15px 0;
     display: flex;
@@ -159,19 +164,6 @@ footer ul li {
     border: 1.8px solid var(--dark);
     transform: scale(1.1);
     cursor: pointer;
-}
-
-.join { 
-    text-align: center;
-    flex-direction: column;
-}
-
-.join-btn-box { 
-    margin: 30px;
-}
-
-.join-btn-box button { 
-    margin: 0 30px;
 }
 
 

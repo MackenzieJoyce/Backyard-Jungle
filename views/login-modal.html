@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backyard Jungle</title>
-    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/public/css/main.css">
 </head>
 
 <body>
@@ -23,6 +23,11 @@
                 <header>
                     <div class="welcome-hero">
                         <h1>Backyard Jungle</h1>
+
+                        <div>
+                            <button class="btn btn-primary" type="submit">Sign up</button>
+                            <button class="btn btn-primary loginBtn" type="submit">Login</button>
+                        </div>
                     </div>
                 </header>
 
@@ -37,37 +42,34 @@
                         <h3>Use Our Widgets To Go The Extra Mile For Your Garden</h3>
                     </div>
                 </div>
-                {{!-- ANA TESTING --}}
-                <div> {{{body}}}</div>
-                <div class="join">
-                    <h2>Join Our Growing Community Of Plant Lovers</h2>
-                    <div class="join-btn-box">
-                        <button class="btn btn-primary" type="submit">Sign up</button>
-                        <button class="btn btn-primary loginBtn" type="submit">Login</button>
-                    </div>
+
+                <div class="github">
+                    <h2>Our app is always growing... Follow the creators on <a href="https://github.com/Anastasia095/Backyard-Jungle">Github</a> for updates!</h2>
                 </div>
             </div>
         </div>
-        <footer>
-            <ul class="footer-nav">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Browse Communities</a>
-                </li>
-                <li>
-                    <a href="#">Plant Id</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </footer>
+
     </main>
+
+    <footer>
+        <ul class="footer-nav">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Browse Communities</a>
+            </li>
+            <li>
+                <a href="#">Plant Id</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </footer>
     <script src="/js/login.js"></script>
 </body>
 
