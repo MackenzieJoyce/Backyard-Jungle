@@ -13,7 +13,6 @@
 body { 
     margin: 0;
     padding: 0;
-    min-height: 100%;
     background-color: var(--light);
     font-size: 16px;
     font-family: 'Public Sans', sans-serif;    
@@ -94,11 +93,11 @@ ul {
 }
 
 footer { 
+    height: 50px;
     width: 100%;
     padding: 10px 0;
     background-color: var(--middle);
-    position: absolute;
-    bottom: 0;
+    text-align: center;
 }
 
 footer ul { 
@@ -263,6 +262,7 @@ footer ul li {
 
 .profile-info img { 
     width: 50%;
+    height: 300px;
     border-radius: 50px;
     border: 1px solid var(--dark);
 }
