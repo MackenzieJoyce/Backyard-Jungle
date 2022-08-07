@@ -19,7 +19,6 @@ Post.init(
     category: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
   },
   {
     sequelize,

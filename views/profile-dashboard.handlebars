@@ -10,38 +10,21 @@
     </aside>
 
     <section id="profile-details">
+        <div>
             <h3>My Garden</h3>
-
-        <div class="garden-box">
-
-            {{#each plants as |plant|}}
+            <p class="garden-tile"></p>
+            {{!-- {{#each plants as |plant|}}
             {{> profile-garden-tiles}}
-            {{/each}}
-
-            {{!-- PLACEHOLDER DELETE WHEN RENDER WORKS --}}
-            <div class="card-body">
-                <div class="card" style="width: 18rem;">
-                    <img src="#" class="card-img-top">
-                    <h3 class="card-title">Scientific_Name</h3>
-                    <h3 class="card-title">Common_Name</h3>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card" style="width: 18rem;">
-                    <img src="#" class="card-img-top">
-                    <h3 class="card-title">Scientific_Name</h3>
-                    <h3 class="card-title">Common_Name</h3>
-                </div>
-            </div>
-
+            {{/each}} --}}
+            {{> post-box}}
         </div>
 
         <div class="input-group">
 
             <form id="plantSearch"action="http://localhost:3001/api/searchplant" method="post">
-                <input type="text" id="pSearch" class="form-control" placeholder="Looking for something?"
-                    aria-label="Looking for something?" name="plant" aria-describedby="basic-addon2">
-                <input type="submit" value="Search">
+                <input type="text" id="pSearch" class="form-control" placeholder="Looking for something specific?"
+                    aria-label="Looking for something specific?" name="plant" aria-describedby="basic-addon2">
+                <input type="submit" value="OK">
             </form>
             {{!-- <div class="input-group-append">
                 <button class="btn btn-outline-secondary" id="plantSearch" type="button" action="/#">Search</button>
