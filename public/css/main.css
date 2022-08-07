@@ -13,7 +13,6 @@
 body { 
     margin: 0;
     padding: 0;
-    min-height: 100%;
     background-color: var(--light);
     font-size: 16px;
     font-family: 'Public Sans', sans-serif;    
@@ -61,6 +60,11 @@ ul {
     cursor: pointer;
 }
 
+img { 
+    object-fit: contain;
+}
+
+
 /*  EVERYPAGE  */
 .nav { 
     width: 100%;
@@ -94,11 +98,11 @@ ul {
 }
 
 footer { 
+    height: 50px;
     width: 100%;
     padding: 10px 0;
     background-color: var(--middle);
-    position: absolute;
-    bottom: 0;
+    text-align: center;
 }
 
 footer ul { 
@@ -120,6 +124,12 @@ footer ul li {
     width: 100%;
     background: linear-gradient(to bottom, #edffce 60%, #8DAA91);
 }
+
+.home-frame { 
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    }
 
 .welcome-hero { 
     height: 80vh;
@@ -261,9 +271,16 @@ footer ul li {
     padding: 30px;
 }
 
+.profile-info figure { 
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
 .profile-info img { 
-    width: 50%;
-    border-radius: 50px;
+    width: 75%;
+    border-radius: 50%;
     border: 1px solid var(--dark);
 }
 

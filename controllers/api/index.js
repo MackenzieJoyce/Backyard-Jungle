@@ -6,7 +6,8 @@ const profileRoutes = require('./profileRoutes')
 
 router.use('/logform', logFormRoutes)
 router.use('/searchplant', plantRoutes)
-router.use('/userroutes', userRoutes)
-router.use('/profileRoutes', profileRoutes)
+router.use('/user', userRoutes)
+router.use('/profile', profileRoutes)
+
 
 module.exports = router
