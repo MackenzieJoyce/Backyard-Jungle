@@ -13,7 +13,6 @@
 body { 
     margin: 0;
     padding: 0;
-    min-height: 100%;
     background-color: var(--light);
     font-size: 16px;
     font-family: 'Public Sans', sans-serif;    
@@ -99,11 +98,11 @@ img {
 }
 
 footer { 
+    height: 50px;
     width: 100%;
     padding: 10px 0;
     background-color: var(--middle);
-    position: absolute;
-    bottom: 0;
+    text-align: center;
 }
 
 footer ul { 
@@ -125,6 +124,12 @@ footer ul li {
     width: 100%;
     background: linear-gradient(to bottom, #edffce 60%, #8DAA91);
 }
+
+.home-frame { 
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    }
 
 .welcome-hero { 
     height: 80vh;

@@ -8,8 +8,6 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-//method to run on every instance to check password - using bcrypt
-//hooks works with bcrypt???
 
 User.init(
 
