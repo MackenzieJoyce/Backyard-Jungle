@@ -16,7 +16,22 @@ async function signupFormHandler(event) {
       });
 
       if (response.ok) {
-          document.location.replace('/dashboard/');
+        if (email && password) {
+            const response = await fetch('/api/user/login', {
+                method: 'post',
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+      
+            if (response.ok) {
+                document.location.replace('/api/profile/');
+            } else {
+                alert(response.statusText);
+            }
+        }
       } else {
           alert(response.statusText);
           console.log('unsuccessfull')
