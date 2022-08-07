@@ -1,3 +1,4 @@
+console.log("HEY IM TEST!")
 async function signupFormHandler(event) {
   event.preventDefault();
   const email = document.querySelector('#email-signup').value.trim();

@@ -5,7 +5,7 @@ const forumRoutes = require('./forumRoutes')
 const homepageRoutes = require('./homepageRoutes')
 
 router.use('/api', apiRoutes)
-router.use('/', communityRoutes)
+router.use('/communities', communityRoutes)
 router.use('/', forumRoutes)
 router.use('/', homepageRoutes)
 
