@@ -1,6 +1,6 @@
-const router = require('express').Router();
-const { Comment, User, Collection } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require('express').Router()
+const { Comment, User, Collection } = require('../../models')
+const withAuth = require('../../utils/auth')
 
 /////THIS IS GETTING THE COMMENTS
 
@@ -57,23 +57,25 @@ router.get('/collection', async (req, res) => {
       include: [
         {
           model: Collection,
-          attributes: ['user_name'],
-        },
-      ],
-    });
+          attributes: ['user_name']
+        }
+      ]
+    })
 
     // Serialize data so the template can read it
-    const collection = collectionData.map((collection) => collection.get({ plain: true }));
+    const collection = collectionData.map((collection) =>
+      collection.get({ plain: true })
+    )
 
     // Pass serialized data and session flag into template
-    res.render('account-dashbaord', { 
-      collection, 
-      logged_in: req.session.logged_in 
-    });
+    res.render('account-dashbaord', {
+      collection,
+      logged_in: req.session.logged_in
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
+})
 
 router.get('/collection/:id', async (req, res) => {
   try {
@@ -81,22 +83,21 @@ router.get('/collection/:id', async (req, res) => {
       include: [
         {
           model: Collection,
-          attributes: ['PLACEHOLDER'],
-        },
-      ],
-    });
+          attributes: ['PLACEHOLDER']
+        }
+      ]
+    })
 
-    const collection = collectionData.get({ plain: true });
+    const collection = collectionData.get({ plain: true })
 
     res.render('collection', {
       ...collection,
       logged_in: req.session.logged_in
-    });
+    })
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
-});
-
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/', withAuth, async (req, res) => {
@@ -104,8 +105,8 @@ router.get('/', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comment }, { model: Collection }],
-    });
+      include: [{ model: Comment }, { model: Collection }]
+    })
 
     const user = userData.get({ plain: true })
 
@@ -130,15 +131,15 @@ router.get('/login', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
-      const userData = await User.findByPk(req.params.id);
-      if(!userData) {
-        res.status(404).json({message: 'No user with this username!'});
-        return;
-      }
-      const user = userData.get({plain: true})
-      res.json(user)
-    } catch (err) {
-      res.status(500).json(err);
+    const userData = await User.findByPk(req.params.id)
+    if (!userData) {
+      res.status(404).json({ message: 'No user with this username!' })
+      return
     }
-});
+    const user = userData.get({ plain: true })
+    res.json(user)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 module.exports = router

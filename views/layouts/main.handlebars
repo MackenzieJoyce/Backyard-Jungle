@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backyard Jungle</title>
-    {{!-- RESET STYLING --}}
-    <link rel="stylesheet" href="/public/css/reset.css">
-    {{!-- HANDLEBARS --}}
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.js"></script>
-    {{!-- BOOTSTRAP --}}
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     {{!-- GOOGLE FONTS --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +24,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">About</a>
                 </li>
+                {{!-- <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                    </div>
+                </div> --}}
                 <li class="nav-item">
                     {{#if logged_in}}
-                    <a href="/profile">profile</a> |
-                    <button class="no-button" id="logout">logout</button>
+                    <a href="/profile"><img src="{{ username.img }}" alt=""></a> |
+                    <button class="no-button nav-link" id="logout">Logout</button>
                     {{else}}
-                    <a href="/login">login</a>
+                    <a class="nav-link" href="/login">Login</a>
                     {{/if}}                
                 </li>
               </ul>
@@ -43,8 +45,10 @@
             {{{ body }}}
         </div>
 
-        <footer>
-            <ul class="footer-nav">
+    </main>
+
+            <footer>
+            <ul>
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -62,7 +66,6 @@
                 </li>
             </ul>
         </footer>
-    </main>
 
     <script src="/js/tips.js"></script>
     <script src="server.js"></script>
