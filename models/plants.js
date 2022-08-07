@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Plants extends Model {}
+class Plants extends Model { }
 
 Plants.init(
   {
@@ -16,9 +16,12 @@ Plants.init(
       allowNull: true,
     },
     Common_Name: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    img_url: {
+      type: DataTypes.TEXT,
+    },
   },
   {
     sequelize,
