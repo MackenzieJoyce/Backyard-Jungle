@@ -302,6 +302,7 @@ footer ul li {
     padding: 20px;
     border: 1px solid var(--dark);
     border-radius: 5px;
+    display: flex;
 }
 
 .widgets { 
