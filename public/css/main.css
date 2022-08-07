@@ -64,6 +64,10 @@ img {
     object-fit: contain;
 }
 
+.card-body { 
+    padding: 0;
+}
+
 
 /*  EVERYPAGE  */
 .nav { 
@@ -297,9 +301,13 @@ footer ul li {
     padding-bottom: 60px;
 }
 
-.garden-tile card{ 
+.garden-box { 
+    display: flex;
+}
+
+.garden-box .card-body{ 
     width: 20%;
-    padding: 20px;
+    margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
     border-radius: 5px;
 }
