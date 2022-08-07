@@ -126,6 +126,12 @@ footer ul li {
     background: linear-gradient(to bottom, #edffce 60%, #8DAA91);
 }
 
+.home-frame { 
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    }
+
 .welcome-hero { 
     height: 80vh;
     display: flex;
