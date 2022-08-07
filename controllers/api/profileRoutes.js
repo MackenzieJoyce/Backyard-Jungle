@@ -18,9 +18,12 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
+    console.log(post);
+    console.log(post[0].user.user_name);
+    // console.log(post.user.user_name);
 
     // Pass serialized data and session flag into template
-    res.render('profile-dashboard', { layout: 'main' })
+    res.render('profile-dashboard', { layout: 'main' , post })
   } catch (err) {
     res.status(500).json(err)
   }
