@@ -7,8 +7,12 @@ const fetch = require('node-fetch');
 // const apiKey = 'AIzaSyAOMapkVritaEyTjG9qlmwvX5q_CjvsrX4';
 // const searchEID = '41f8fc9ff288c4c86';
 
-const apiKey = 'AIzaSyCl3devJEdk4J8236Gu1jP3IsJ2MFuIvfg';
-const searchEID = '2031e8b19782f43e6';
+// const apiKey = 'AIzaSyCl3devJEdk4J8236Gu1jP3IsJ2MFuIvfg';
+// const searchEID = '2031e8b19782f43e6';
+
+const apiKey = 'AIzaSyAmNaGSlmLj6oRlvOHqi6mWuLCw2y8u2F0';
+const searchEID = 'a0777bdb7dc6e4e9f';
+
 
 //figure out in what format to pass in data and test if teh query actually works, also need || && separate properties one of the names might not match the search string
 router.post('/', async (req, res) => {
@@ -37,6 +41,8 @@ router.post('/', async (req, res) => {
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
     console.log(plants.length)
+    //************************** */
+
 
 //**********************LETS KEEP IT HERE FOR NOW */
 
@@ -54,7 +60,7 @@ router.post('/', async (req, res) => {
 
     async function getPromise() {
         let getUrl =[];
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
             getUrl[i] = await fetch('https://www.googleapis.com/customsearch/v1?num=1&key='
                 + apiKey
                 + '&cx='
@@ -63,8 +69,10 @@ router.post('/', async (req, res) => {
                 + plants[i].Common_Name.split(' ').join('%')
                 + '+plant')
                 .then(response => response.json())
+                .then(response => console.log(response))
                 .then(response => {
-                    return response.items[0].pagemap.cse_thumbnail[0].src
+                    // return response.items[0].pagemap.cse_thumbnail[0].src
+                    return response
                 });
         }
         return getUrl;
@@ -72,16 +80,17 @@ router.post('/', async (req, res) => {
     }
 
     function addUrl(item, index, arr){
-        for (var i = 0; i < 2; i++){
+        for (var i = 0; i < 1; i++){
             arr[index] = item[i]
         };
     };
 
     getPromise().then(function (result) {
         console.log("TEST RESULT")
-        console.log(result[1])
+        console.log(result[0])
+        // console.log(result[0].items[0].pagemap.cse_thumbnail[0].src)
         plants.forEach((element, index) => {
-            element.URL = result[index];
+            element.URL = result[index].items[index].pagemap.cse_thumbnail[index].src;
           });
         console.log(plants[0])
         res.render('profile-dashboard', { layout: 'main', plants });
