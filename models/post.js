@@ -2,20 +2,24 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Post extends Model {}
+class Post extends Model { }
 
 Post.init(
-//title, type string, allow null false
-//body, type string, allow null false
+  //title, type string, allow null false
+  //body, type string, allow null false
   {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     body: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      }
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    category: {
+      type: DataTypes.ARRAY,
+      allowNull: false,
+    }
   },
   {
     sequelize,
