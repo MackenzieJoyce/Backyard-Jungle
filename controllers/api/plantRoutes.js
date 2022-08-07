@@ -12,7 +12,8 @@ const searchEID = '2031e8b19782f43e6';
 
 //figure out in what format to pass in data and test if teh query actually works, also need || && separate properties one of the names might not match the search string
 router.post('/', async (req, res) => {
-    // console.log(req.body.plant)
+    console.log('test input')
+    console.log(req.body)
 
     const plantData = await Plants.findAll({
         where: {
@@ -83,7 +84,7 @@ router.post('/', async (req, res) => {
             element.URL = result[index];
           });
         console.log(plants[0])
-        res.render('test', { layout: 'testlayout', plants });
+        res.render('profile-dashboard', { layout: 'main', plants });
     });
 ;
 

@@ -11,21 +11,29 @@
     <section id="profile-details">
         <div>
             <h3>My Garden</h3>
-            <p class="garden-tile">{{> profile-garden-tiles}}</p>
+            <p class="garden-tile"></p>
+            {{#each plants as |plant|}}
+            {{> profile-garden-tiles}}
+            {{/each}}
+
         </div>
 
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Looking for something specific?" aria-label="Looking for something specific?" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
-            </div>
+            <form action="http://localhost:3001/api/searchplant" method="post">
+                <input type="text" id="pSearch" class="form-control" placeholder="Looking for something specific?"
+                    aria-label="Looking for something specific?" name="plant" aria-describedby="basic-addon2">
+                <input type="submit" value="OK">
+            </form>
+            {{!-- <div class="input-group-append">
+                <button class="btn btn-outline-secondary" id="plantSearch" type="button" action="/#">Search</button>
+            </div> --}}
         </div>
 
 
-        
+
     </section>
 
-<!--            <div>
+    <!--            <div>
         Weather App would go down here 
     </div> 
 -->
