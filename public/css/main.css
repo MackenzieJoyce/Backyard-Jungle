@@ -133,10 +133,11 @@ footer ul li {
     width: 100%;
     position: absolute; 
     top: 0; 
-    }
+}
 
 .welcome-hero { 
     height: 80vh;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
