@@ -178,7 +178,7 @@ footer ul li {
 
 .teaser-card, 
 .teaser-card img { 
-    width: 400px;
+    width: 350px;
     border-radius: 5px;
 }
 
@@ -215,7 +215,7 @@ footer ul li {
 /* Placeing this out of logical order so the card itself doesn't take the padding */
 
 .github { 
-    margin: 60px 0;
+    margin: 100px 0;
     text-align: center;
 }
 
