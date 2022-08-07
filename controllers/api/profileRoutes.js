@@ -1,6 +1,54 @@
 const router = require('express').Router()
-const { Comment, User, Collection } = require('../../models')
+const { Comment, User, Post, Collection } = require('../../models')
 const withAuth = require('../../utils/auth')
+
+
+///THIS IS GETTING THE POSTS
+router.get('/', async (req, res) => {
+  try {
+    // Get all comments and JOIN with user data
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['user_name']
+        }
+      ]
+    })
+
+    // Serialize data so the template can read it
+    const post = postData.map((post) => post.get({ plain: true }))
+
+    // Pass serialized data and session flag into template
+    res.render('profile-dashboard', { layout: 'main' })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['user_name']
+        }
+      ]
+    })
+
+    const post = postData.get({ plain: true })
+
+    res.render('post', {
+      ...post,
+      logged_in: req.session.logged_in
+    })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
+
 
 /////THIS IS GETTING THE COMMENTS
 
@@ -17,7 +65,7 @@ router.get('/', async (req, res) => {
     })
 
     // Serialize data so the template can read it
-    const comments = commentData.map((comment) => comment.get({ plain: true }))
+    const comment = commentData.map((comment) => comment.get({ plain: true }))
 
     // Pass serialized data and session flag into template
     res.render('profile-dashboard', { layout: 'main' })

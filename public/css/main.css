@@ -64,6 +64,10 @@ img {
     object-fit: contain;
 }
 
+.card-body { 
+    padding: 0;
+}
+
 
 /*  EVERYPAGE  */
 .nav { 
@@ -137,6 +141,11 @@ footer ul li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.welcome-hero h1, 
+.welcome-hero .button-box { 
+    z-index: 2;
 }
 
 .welcome-hero button { 
@@ -297,9 +306,13 @@ footer ul li {
     padding-bottom: 60px;
 }
 
-.garden-tile card{ 
+.garden-box { 
+    display: flex;
+}
+
+.garden-box .card-body{ 
     width: 20%;
-    padding: 20px;
+    margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
     border-radius: 5px;
     display: flex;
@@ -367,4 +380,13 @@ footer ul li {
     font-weight: 800;
     border-radius: 50px;
     border: 1px solid var(--light);
+}
+
+.post-card{
+    padding: 1%;
+    margin: 0.5%;
+    border: solid;
+    border-color: darkgreen;
+    border-radius: 10px;
+
 }
