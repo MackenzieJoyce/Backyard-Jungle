@@ -143,6 +143,11 @@ footer ul li {
     align-items: center;
 }
 
+.welcome-hero h1, 
+.welcome-hero .button-box { 
+    z-index: 2;
+}
+
 .welcome-hero button { 
     width: 100px;
     margin: 30px;
@@ -310,6 +315,7 @@ footer ul li {
     margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
     border-radius: 5px;
+    display: flex;
 }
 
 .widgets { 
