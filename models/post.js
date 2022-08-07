@@ -17,7 +17,7 @@ Post.init(
       allowNull: false,
     },
     category: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.STRING,
       allowNull: false,
     }
   },

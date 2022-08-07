@@ -80,7 +80,7 @@ router.get('/comment/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['user_name']
+          attributes: ['category']
         }
       ]
     })
