@@ -166,6 +166,11 @@ footer ul li {
     cursor: pointer;
 }
 
+.github { 
+    margin: 60px 0;
+    text-align: center;
+}
+
 
 /*  LOGIN  */
 .login-forms { 
