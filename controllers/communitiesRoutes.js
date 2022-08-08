@@ -1,9 +1,14 @@
 const router = require('express').Router();
-const { Plants } = require('../models');
+const { Plants, Category } = require('../models');
 
 router.get('/', async (req, res) => {
     console.log('communities route TEST!');
-    res.render('communities', {layout: 'main'});
-})
+
+    const categoryData = await Category.findAll().catch((err) => { 
+        res.json(err);
+      });
+        const categories = categoryData.map((category) => category.get({ plain: true }));
+        res.render('communities', { layout: 'main', categories });
+      });
 
 module.exports = router;

@@ -10,7 +10,7 @@ router.use('/api', apiRoutes)
 router.use('/communities', communityRoutes)
 router.use('/about', aboutRoutes)
 router.use('/contact', contactRoutes)
-router.use('/', forumRoutes)
+router.use('/forum', forumRoutes)
 router.use('/', homepageRoutes)
 
 module.exports = router
