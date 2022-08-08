@@ -13,9 +13,11 @@
         <div>
             <h3>My Garden</h3>
             <p class="garden-tile"></p>
-            {{!-- {{#each plants as |plant|}}
+            
+            {{#each plants as |plant|}}
             {{> profile-garden-tiles}}
-            {{/each}} --}}
+            {{/each}}
+
             {{#each post as |p|}}
             {{> post-box}}
             {{/each}}
@@ -23,7 +25,7 @@
 
         <div class="input-group">
 
-            <form id="plantSearch"action="http://localhost:3001/api/searchplant" method="post">
+            <form id="plantSearch">
                 <input type="text" id="pSearch" class="form-control" placeholder="Looking for something specific?"
                     aria-label="Looking for something specific?" name="plant" aria-describedby="basic-addon2">
                 <input type="submit" value="OK">

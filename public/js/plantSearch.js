@@ -1,5 +1,5 @@
 console.log("HEY! I am plant search JS file and Im connected!");
-const url = 'http://localhost:3001/api/searchplant';
+const url = 'http://localhost:3001/api/searchplant?plant=potato';
 const searchFormHandler = async (event) => {
     event.preventDefault();
     console.log("Click Click!")
@@ -8,13 +8,11 @@ const searchFormHandler = async (event) => {
 
     // Send a POST request to the API endpoint
     const response = await fetch(url , {
-        method: 'POST',
-        body: JSON.stringify({ plant }),
         headers: { 'Content-Type': 'application/json' }
     });
     
     if (response.ok) {
-        document.location.replace('/api/searchplant');
+        document.location.replace('/api/searchplant?plant=potato');
     } else {
         console.log("Sadly this API doesn't work...")
     }
