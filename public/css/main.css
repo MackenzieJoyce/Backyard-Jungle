@@ -1,79 +1,112 @@
 /*  VARIABLES  */
-:root { 
+:root {
     --dark: #223F4F;
     --dark-middle: #647646;
     --middle: #A8B088;
     --light: #ffe7e7;
     --offWhite: #fffef3;
-    --standout:#996048;
-    --touches: #e9857c; 
+    --standout: #996048;
+    --touches: #e9857c;
 }
 
 /*  BODY AND TYPOGRAPHY  */
-body { 
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
     background-color: var(--light);
-    font-size: 16px;
+
+    font-size: 18px;
     font-family: 'Public Sans', sans-serif;    
 }
 
-h1 { 
+h1 {
     font-size: 2.5rem;
     font-weight: 800;
 }
 
-h2 { 
+h2 {
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-h1, h2 { 
+h1,
+h2 {
     letter-spacing: .15rem;
 }
 
-a { 
+a {
     color: var(--offWhite);
     text-decoration: none;
 }
 
-a:hover { 
+a:hover {
     text-decoration: none;
     color: var(--dark);
 }
 
-ul { 
+ul {
     list-style: none;
 }
 
+
 .btn { 
-    color: var(--light);
+    color: var(--offWhite);
     border: 1px solid var(--standout);
     background-color: var(--standout);
     transition: .4s;
 }
 
-.btn:hover { 
+.btn:hover {
     border: 1.8px solid var(--dark);
     background-color: var(--standout);
     transform: scale(1.1);
     cursor: pointer;
 }
 
-img { 
+img {
     object-fit: contain;
 }
 
-.card-body { 
+.card-body {
     padding: 0;
+    
+}
+
+/*///////////////////LOGIN MODAL//*/
+
+.mcustom {
+    /* color:white; */
+    padding: 5%;
+    opacity: 1;
+    background: radial-gradient(848px at 10% 20%, rgba(174, 231, 165, 0.9) 0%, rgb(181, 205, 154) 90%);
+}
+
+.opacity-2 {
+    opacity: 0.90 !important;
+    background: radial-gradient(848px at 10% 20%, rgba(174, 231, 165, 0.9) 0%, rgb(181, 205, 154) 90%);
 }
 
 
+/* Garden Tiles START */
+.wraper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gcard-body {
+    background-color: #647646;
+    padding: 0.5%;
+    margin: 0.5%;
+    text-align: center;
+}
+
+/* Garden Tiles END */
+
 /*  EVERYPAGE  */
-.nav { 
+.nav {
     width: 100%;
-    height: 75px; 
+    height: 75px;
     padding: 0 10px;
     background-color: var(--middle);
     display: flex;
@@ -81,28 +114,38 @@ img {
     align-items: center;
 }
 
+
 .nav-item { 
-    margin: 0 10px;
+    width: 100px;
+    margin: 0 20px;
+    text-align: center;
+    border: 3px solid #c7efcd;
+    border-radius: 5px;
 }
 
-.nav-link:hover { 
+.nav-item:hover { 
     color: var(--dark);
     background-color: #c7efcd;
     border-radius: 5px;
     cursor: pointer;
 }
 
+
+.nav-item:active { 
+    border-bottom: var(--standout);
+}
+
 .nav .input-group { 
     width: 300px;
 }
 
-.content { 
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-footer { 
+footer {
     height: 50px;
     width: 100%;
     padding: 10px 0;
@@ -110,13 +153,13 @@ footer {
     text-align: center;
 }
 
-footer ul { 
+footer ul {
     margin: 0;
     display: flex;
     justify-content: center;
 }
 
-footer ul li { 
+footer ul li {
     margin: 0 20px;
     font-size: .8rem;
     display: flex;
@@ -125,19 +168,22 @@ footer ul li {
 
 
 /*  HOME PAGE  */
-.home-page-body { 
+.home-page-body {
     width: 100%;
-    background: linear-gradient(to bottom, #edffce 60%, #8DAA91);
+    background: linear-gradient(to bottom, #edffce 20%, #8DAA91);
 }
 
-.home-frame { 
+.home-page-body .nav { 
+    display: flex;
+    justify-content: center;
+}
+
+.home-frame {
     width: 100%;
     position: absolute; 
-    top: 0; 
 }
 
 .welcome-hero { 
-    margin-bottom: 50px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -145,44 +191,47 @@ footer ul li {
 }
 
 .hero-content {
-    margin: 180px 0 100px 0;
+    margin: 180px 0 75px 0;
     z-index: 2;
 }
 
 .welcome-hero h1 { 
-    margin: 50px 0 50px 0;
+    margin: 25px 0;
+    color: #0e1c0f;
     font-size: 5rem;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     word-spacing: 2rem;
+    text-shadow: 1px 1px 8px var(--standout);
 }
 
-.welcome-hero h2 { 
+/* .welcome-hero h2 { 
     font-size: 3rem;
-}
+} */
 
 .welcome-hero button { 
-    width: 150px;
-    margin: 0 30px;
+    width: 125px;
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .teaser { 
-    padding: 15px 0;
-    margin: 15px 0;
+    margin: 30px;
+    padding: 30px 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
-.teaser-card, 
-.teaser-card img { 
+
+.teaser-card,
+.teaser-card img {
     width: 350px;
+    height: 100%;
     border-radius: 5px;
 }
 
-.teaser-card { 
+.teaser-card {
     background-color: var(--dark-middle);
     color: var(--light);
     text-align: center;
@@ -190,27 +239,30 @@ footer ul li {
     transition: .5s;
 }
 
-.teaser-card h3 { 
+.teaser-card h3 {
     padding: 10px;
 }
 
-.category-card { 
+.category-card {
+    width: 30%;
     height: 200px;
     text-align: center;
     border: 1px solid var(--dark);
     border-radius: 3px;
     transition: .5s;
-} 
+}
+
 /* Includes category card found in the category.handlebars */
 
-.teaser-card:hover, .category-card:hover, .category-list:hover, 
-.forum-box .card:hover { 
+.teaser-card:hover,
+.category-card:hover,
+.category-list:hover,
+.forum-box .card:hover {
     border: 1.8px solid var(--dark);
     transform: scale(1.1);
     cursor: pointer;
 }
 
-/* Placeing this out of logical order so the card itself doesn't take the padding */
 
 .github { 
     margin: 100px 0;
@@ -219,12 +271,13 @@ footer ul li {
 
 
 /*  LOGIN  */
-.login-forms { 
+.login-forms {
     display: flex;
 }
+
 /* div around the two forms */
 
-.login-card { 
+.login-card {
     height: 300px;
     margin: 0 20px;
     padding: 20px;
@@ -235,35 +288,36 @@ footer ul li {
     justify-content: space-between;
 }
 
-.login-card h2 { 
+.login-card h2 {
     margin: 10px;
     text-align: center;
 }
 
-.form-group { 
+.form-group {
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.form-group label { 
+.form-group label {
     margin-right: 8px;
     margin-bottom: 5px;
 }
 
-.form-group input { 
+.form-group input {
     border-radius: 4px;
 }
 
-.login-card .form-group-btn { 
+.login-card .form-group-btn {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-} 
+}
+
 /* Positions button at the center */
 
-.form-group-btn button { 
+.form-group-btn button {
     width: 100px;
     padding: 10px;
     border-radius: 20px;
@@ -273,7 +327,7 @@ footer ul li {
 
 
 /*  CATEGORIES  */
-.categories-intro { 
+.categories-intro {
     width: 100%;
     padding: 60px 30px 20px 30px;
     background-color: var(--dark-middle);
@@ -281,15 +335,16 @@ footer ul li {
     text-align: center;
 }
 
-.categories-intro h1 { 
+.categories-intro h1 {
     padding-bottom: 20px;
     margin-bottom: 20px;
     color: var(--touches);
     border-bottom: 2px solid #223F4F;
 }
 
-/* .category-collection {
-    width: 100%; 
+.category-card-box {
+    width: 100%;
+    margin: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -327,51 +382,75 @@ footer ul li {
 
 
 /*  Profile  */
-.profile-dashboard { 
+.profile-dashboard {
     width: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
     display: flex;
 }
 
-.profile-info { 
+.profile-info {
     width: 30%;
     padding: 30px;
 }
 
-.profile-info figure { 
+.profile-info figure {
     width: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
 }
 
-.profile-info img { 
-    width: 75%;
+.profile-info-img { 
+    width: 100%;
     border-radius: 50%;
-    border: 1px solid var(--dark);
+    border: 5px solid var(--dark-middle);
 }
 
-.profile-info h3 { 
-    padding: 30px 0;
+.profile-info > h3 { 
+    margin: 10px 0 20px 0;
+    color: var(--dark);
 }
 
-.profile-details { 
+.widgets { 
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    text-align: center;
+    border: 3px solid var(--dark-middle);
+    border-radius: 5px;
+}
+
+.widgets h3 { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.profile-details {
     padding: 30px 0 30px 30px;
 }
 
 .profile-details h3 { 
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.profile-details p { 
+.profile-details p {
     padding-bottom: 60px;
+}
+
+.profile-details .input-group { 
+    margin: 30px 0;
 }
 
 .garden-box { 
     display: flex;
 }
 
-.garden-box .card-body{ 
+.garden-box .card-body { 
     width: 20%;
     margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
@@ -379,34 +458,43 @@ footer ul li {
     display: flex;
 }
 
-.widgets { 
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid var(--dark);
+.post-card {
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    border: solid var(--dark-middle);
+    border-radius: 10px;
+}
+
+.post-top { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
 
-/*  FORUM  */ 
-.specific-category-list { 
-    width: 100%; 
+/*  FORUM  */
+.specific-category-list {
+    width: 100%;
     display: flex;
 }
 
-.list-group, .forum-box { 
+.list-group,
+.forum-box {
     margin: 30px 30px 30px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.list-group { 
+.list-group {
     width: 20%;
 }
 
-.list-group h3, 
-.forum-box h3 { 
+.list-group h3,
+.forum-box h3 {
     width: 100%;
     padding-bottom: 15px;
     border-bottom: 3px solid var(--dark);
@@ -414,28 +502,28 @@ footer ul li {
     font-weight: 700;
 }
 
-.list-group-item { 
+.list-group-item {
     width: 100%;
     background-color: var(--middle);
     color: var(--offWhite);
     transition: .5s;
 }
 
-.forum-box { 
+.forum-box {
     width: 80%;
 }
 
-.forum-box .card { 
+.forum-box .card {
     width: 100%;
     transition: .5s;
 }
 
-.forum-box .card h5, 
-.forum-box .card h6 { 
+.forum-box .card h5,
+.forum-box .card h6 {
     margin-bottom: 1.3rem;
 }
 
-.add-post { 
+.add-post {
     background-color: var(--dark);
     color: var(--touches);
     font-weight: 800;
@@ -443,7 +531,7 @@ footer ul li {
     border: 1px solid var(--light);
 }
 
-.post-card{
+.post-card {
     padding: 1%;
     margin: 0.5%;
     border: solid;
@@ -451,3 +539,4 @@ footer ul li {
     border-radius: 10px;
 
 }
+
