@@ -290,11 +290,18 @@ footer ul li {
     border-bottom: 2px solid #223F4F;
 }
 
+.category-collection { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .category-card-box { 
     width: 100%;
     margin: 30px;
-    display: flex;
-    justify-content: center;
+}
+
+.category-collection > .category-card-box { 
+    flex: 50%;
 }
 
 
