@@ -144,7 +144,6 @@ footer ul li {
 }
 
 .welcome-hero { 
-    margin-bottom: 50px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -152,14 +151,14 @@ footer ul li {
 }
 
 .hero-content {
-    margin: 180px 0 100px 0;
+    margin: 180px 0 75px 0;
     z-index: 2;
 }
 
 .welcome-hero h1 { 
-    margin: 50px 0 50px 0;
+    margin: 25px 0;
     font-size: 5rem;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     word-spacing: 2rem;
 }
 
@@ -168,10 +167,9 @@ footer ul li {
 }
 
 .welcome-hero button { 
-    width: 150px;
-    margin: 0 30px;
+    width: 125px;
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .teaser { 
@@ -187,6 +185,7 @@ footer ul li {
 .teaser-card, 
 .teaser-card img { 
     width: 350px;
+    height: 100%;
     border-radius: 5px;
 }
 
