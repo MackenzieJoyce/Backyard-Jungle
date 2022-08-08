@@ -82,7 +82,7 @@ img {
 
 .nav-item { 
     width: 100px;
-    margin: 0 10px;
+    margin: 0 20px;
     text-align: center;
     border: 3px solid #c7efcd;
     border-radius: 5px;
@@ -179,8 +179,8 @@ footer ul li {
 }
 
 .teaser { 
-    padding: 15px 0;
-    margin: 15px 0;
+    margin: 30px;
+    padding: 30px 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
