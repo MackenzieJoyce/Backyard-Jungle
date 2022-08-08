@@ -6,7 +6,7 @@ const homepageRoutes = require('./homepageRoutes')
 
 router.use('/api', apiRoutes)
 router.use('/communities', communityRoutes)
-router.use('/', forumRoutes)
+router.use('/forum', forumRoutes)
 router.use('/', homepageRoutes)
 
 module.exports = router
