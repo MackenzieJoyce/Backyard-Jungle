@@ -419,7 +419,7 @@ footer ul li {
     margin-bottom: 30px;
     background-color: var(--offWhite);
     text-align: center;
-    border: 3px solid var(--dark-middle);
+    border: 1px solid var(--dark-middle);
     border-radius: 5px;
 }
 
