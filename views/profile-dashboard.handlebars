@@ -1,7 +1,7 @@
 <div class="profile-dashboard">
     <aside class="profile-info">
         <figure>
-            <img src="/img/chika.jpg" alt="">
+            <img class="profile-info-img"src="/img/chika.jpg" alt="">
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
@@ -13,11 +13,11 @@
         <div>
             <h3>My Garden</h3>
             <p class="garden-tile"></p>
-            
+            <div class="wraper">
             {{#each plants as |plant|}}
             {{> profile-garden-tiles}}
             {{/each}}
-
+            </div>
             {{#each post as |p|}}
             {{> post-box}}
             {{/each}}

@@ -68,6 +68,19 @@ img {
     padding: 0;
 }
 
+/* Garden Tiles START */
+.wraper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gcard-body{
+    background-color: #647646;
+    padding: 0.5%;
+    margin: 0.5%;
+    text-align: center;
+}
+/* Garden Tiles END */
 
 /*  EVERYPAGE  */
 .nav { 
@@ -318,7 +331,7 @@ footer ul li {
     justify-content: center;
 }
 
-.profile-info img { 
+.profile-info-img { 
     width: 75%;
     border-radius: 50%;
     border: 1px solid var(--dark);
