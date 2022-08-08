@@ -22,10 +22,10 @@
             <div class="home-page-body">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Browse</a>
+                        <a class="nav-link" href="/communities/">Browse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="/about/">About</a>
                     </li>
                     {{!-- <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
@@ -34,7 +34,7 @@
                         </div>
                     </div> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
 
@@ -158,7 +158,7 @@
                 </header>
 
                 <div class="teaser">
-                    <a href="/api/searchplant/"><div class="teaser-card plant-id-teaser">
+                    <a href="/api/plant/"><div class="teaser-card plant-id-teaser">
                         <img src="/img/dracula-simia.jpg" alt="">
                         <h3>Identify Plants You Find Along The Way</h3>
                     </div></a>
@@ -166,10 +166,11 @@
                         <img src="/img/community_gardens.jpg" alt="">
                         <h3>Talk to Other Plant People In Our Forums</h3>
                     </div></a>
-                    <a><div class="teaser-card widget-teaser">
+                     <div data-toggle="modal"
+                        data-target="#project-modal" class="teaser-card widget-teaser">
                         <img src="/img/weather.jpg" alt="">
-                        <h3>Go The Extra Mile With Our Widgets</h3>
-                    </div></a>
+                        <h3>Go The Extra Mile With Our Widgets</h3></button>
+                    </div>
                 </div>
 
                 <div class="github">
@@ -182,13 +183,13 @@
     <footer>
         <ul class="footer-nav">
             <li>
-                <a href="#">Browse Communities</a>
+                <a href="/communities/">Browse Communities</a>
             </li>
             {{!-- <li>
                 <a href="#">Plant Id</a>
             </li> --}}
             <li>
-                <a href="#">About the Project</a>
+                <a href="/about/">About the Project</a>
             </li>
             <li>
                 <a href="#">Contact Us</a>
