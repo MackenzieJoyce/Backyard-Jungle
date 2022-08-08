@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
-    console.log(post);
-    console.log(post[0].user.user_name);
+    // console.log(post);
+    // console.log(post[0].user.user_name);
     // console.log(post.user.user_name);
 
     // Pass serialized data and session flag into template
@@ -82,8 +82,8 @@ router.get('/comment/:id', async (req, res) => {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
         {
-          model: Post,
-          attributes: ['category']
+          model: User,
+          attributes: ['user_name']
         }
       ]
     })
