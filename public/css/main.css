@@ -3,7 +3,7 @@
     --dark: #223F4F;
     --dark-middle: #647646;
     --middle: #A8B088;
-    --light: #fff5f5;
+    --light: #edffce;
     --offWhite: #f6fff3;
     --standout: #996048;
     --touches: #e979a0;
@@ -25,7 +25,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
 }
 
@@ -130,10 +130,14 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    position: fixed;
+    left: 0;
+    z-index: 5;
 }
 
 
 .nav-item { 
+    margin: 0 5px;
     text-align: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -348,7 +352,7 @@ footer ul li {
 }
 
 .categories-intro h1 {
-    color: var(--touches);
+    color: var(--standout);
 }
 
 .category-card-box {
@@ -421,7 +425,7 @@ footer ul li {
 
 .widgets h3 { 
     padding: 5px;
-    background-color: var(--touches);
+    background-color: var(--standout);
     color: var(--offWhite);
     font-weight: 600;
     border-top-left-radius: 5px;
@@ -461,12 +465,17 @@ footer ul li {
     margin-bottom: 30px;
     background-color: var(--offWhite);
     border:1px solid var(--dark-middle);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.post-card .post-top, 
+.post-card p { 
+    padding: 10px;
 }
 
 .post-top { 
-    padding: 5px;
-    background-color: var(--touches);
+    background-color: var(--standout);
     color: var(--offWhite);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -481,10 +490,7 @@ footer ul li {
 }
 
 .specific-category-list {
-    margin-left: 30px;
     text-align: center;
-    border: .5px solid;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -493,7 +499,6 @@ footer ul li {
     padding: 10px;
     margin: 0;
     background-color: var(--middle);
-    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
