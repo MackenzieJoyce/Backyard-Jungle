@@ -481,9 +481,18 @@ footer ul li {
 
 
 /*  FORUM  */
+.specific-forum-content { 
+    display: flex;
+}
+
+.specific-forum-content { 
+    
+}
+
 .specific-category-list {
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .list-group,
@@ -528,20 +537,11 @@ footer ul li {
     margin-bottom: 1.3rem;
 }
 
-.add-post {
-    background-color: var(--dark);
-    color: var(--touches);
-    font-weight: 800;
-    border-radius: 50px;
-    border: 1px solid var(--light);
-}
-
 .post-card {
     padding: 1%;
     margin: 0.5%;
     border: solid;
     border-color: darkgreen;
     border-radius: 10px;
-
 }
 
