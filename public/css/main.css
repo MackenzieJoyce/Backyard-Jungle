@@ -130,9 +130,9 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    position: fixed;
+    /* position: fixed;
     left: 0;
-    z-index: 5;
+    z-index: 5; */
 }
 
 
@@ -145,7 +145,7 @@ img {
 
 .nav-item:hover { 
     color: var(--dark);
-    background-color: #c7efcd;
+    background-color: var(--light);
     cursor: pointer;
 }
 
@@ -464,7 +464,7 @@ footer ul li {
 .post-card {
     margin-bottom: 30px;
     background-color: var(--offWhite);
-    border:1px solid var(--dark-middle);
+    border: 1px solid var(--dark-middle);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -475,7 +475,7 @@ footer ul li {
 }
 
 .post-top { 
-    background-color: var(--standout);
+    background-color: var(--dark-middle);
     color: var(--offWhite);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -498,7 +498,7 @@ footer ul li {
 .specific-category-list h3 { 
     padding: 10px;
     margin: 0;
-    background-color: var(--middle);
+    background-color: var(--standout);
     border-top-right-radius: 10px;
 }
 
