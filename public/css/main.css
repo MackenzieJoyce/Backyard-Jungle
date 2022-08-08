@@ -1,11 +1,11 @@
 /*  VARIABLES  */
 :root {
     --dark: #223F4F;
-    --dark-middle: #647646;
+    --dark-middle: #737f5f;
     --middle: #A8B088;
     --light: #edffce;
     --offWhite: #f6fff3;
-    --standout: #996048;
+    --standout: #a4725c;
     --touches: #e979a0;
 }
 
@@ -459,6 +459,7 @@ footer ul li {
 
 .post-card {
     margin-bottom: 30px;
+    padding-bottom: 30px;
     background-color: var(--offWhite);
     border: 1px solid var(--dark-middle);
     border-top-left-radius: 10px;
@@ -520,8 +521,4 @@ footer ul li {
 
 .specific-forum-post h3 { 
     margin: 10px 0;
-}
-
-.specific-forum-post .post-card { 
-    height: 200px;
 }
