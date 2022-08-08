@@ -160,6 +160,7 @@ footer ul li {
     font-size: 5rem;
     letter-spacing: .2rem;
     word-spacing: 2rem;
+    text-shadow: 2px 2px 8px var(--standout);
 }
 
 /* .welcome-hero h2 { 
