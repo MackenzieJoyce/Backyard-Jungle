@@ -33,30 +33,35 @@ router.get('/', async (req, res) => {
         limit: 8
     });
 
-    
-
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
     console.log([plants[0].Common_Name])
 
-
+    if (plants[0].img_url == null){
     const params = {
         engine: "yandex_images",
         text: plants[0].Common_Name,
         yandex_domain: "yandex.ru"
       };
       
+
       const callback = function(data) {
-        console.log(data["images_results"][0].thumbnail);
-        plants[0]['URL'] = data["images_results"][0].thumbnail;
+        console.log("API was called because plant has no image")
+        plants[0]['img_url'] = data["images_results"][0].thumbnail;
+        console.log(plants[0].img_url);
+        Plants.update(
+            { img_url: data["images_results"][0].thumbnail },
+            { where: { id: plants[0].id } }
+          )
         res.render('profile-dashboard', { layout: 'main', plants });
       };
       
       // Show result as JSON
       search.json(params, callback);
-    // console.log(plants[4]);
-    // console.log(plants);
-
+    }
+    else{
+        res.render('profile-dashboard', { layout: 'main', plants });
+    }
 
 });
 
