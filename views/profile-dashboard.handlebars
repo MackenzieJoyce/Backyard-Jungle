@@ -13,11 +13,11 @@
         <div>
             <h3>My Garden</h3>
             <p class="garden-tile"></p>
-            
+            <div class="wraper">
             {{#each plants as |plant|}}
             {{> profile-garden-tiles}}
             {{/each}}
-
+            </div>
             {{#each post as |p|}}
             {{> post-box}}
             {{/each}}

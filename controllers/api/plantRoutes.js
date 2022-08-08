@@ -27,7 +27,8 @@ router.get('/', async (req, res) => {
             }
 
             ]
-        }
+        },
+        limit: 8
     });
 
     // Serialize data so the template can read it
