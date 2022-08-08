@@ -16,6 +16,17 @@
                 {{> profile-garden-tiles}}
             {{/each}}
 
+            <div class="input-group">
+                <form class="form-inline" id="plantSearch" action="http://localhost:3001/api/searchplant" method="post">
+                    <input type="search" id="pSearch" class="form-control" placeholder="Looking for something?"
+                        aria-label="Looking for something?" name="plant" aria-describedby="basic-addon2">
+                    <input class="btn primary-btn" type="submit" value="Search">
+                </form>
+                {{!-- <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="plantSearch" type="button" action="/#">Search</button>
+                </div> --}}
+            </div>
+
             <h3>My Posts</h3>
             {{#each post as |post|}}
                 {{> post-box}}
@@ -23,19 +34,6 @@
 
 
         </div>
-
-        <div class="input-group">
-
-            <form id="plantSearch"action="http://localhost:3001/api/searchplant" method="post">
-                <input type="text" id="pSearch" class="form-control" placeholder="Looking for something specific?"
-                    aria-label="Looking for something specific?" name="plant" aria-describedby="basic-addon2">
-                <input type="submit" value="OK">
-            </form>
-            {{!-- <div class="input-group-append">
-                <button class="btn btn-outline-secondary" id="plantSearch" type="button" action="/#">Search</button>
-            </div> --}}
-        </div>
-
 
 
     </section>
