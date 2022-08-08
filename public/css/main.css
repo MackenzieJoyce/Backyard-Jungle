@@ -91,6 +91,10 @@ img {
     cursor: pointer;
 }
 
+.nav-link:active { 
+    border-bottom: var(--standout);
+}
+
 .nav .input-group { 
     width: 300px;
 }
