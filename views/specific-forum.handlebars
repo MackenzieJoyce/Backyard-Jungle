@@ -44,6 +44,9 @@
 </div>
 
 {{!-- END OF MODAL --}}
+
+
+
 {{!--
 <div class="row mb-2">
   <div class="col-md-8">
@@ -51,11 +54,16 @@
   </div>
 </div> --}}
 {{!-- <div> --}}
+
+
+
 <h1>Community Posts</h1>
-{{#each post as |post|}}
-{{>post-box}}
-{{/each}}
+  {{#each post as |post|}}
+    {{>post-box}}
+  {{/each}}
 </div>
+
+
 
 <div class="specific-category-list">
   <aside class="list-group">
@@ -64,4 +72,5 @@
       {{> category-list}}
     {{/each}}
   </aside>
+</div>
 
