@@ -23,11 +23,10 @@ Collection.init(
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
-        timestamps: true,
         underscored: true,
         modelName: 'collection',
+        timestamps: false,
     }
 );
 
