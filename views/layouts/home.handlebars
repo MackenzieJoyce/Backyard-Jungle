@@ -20,15 +20,42 @@
         <div class="content">
 
             <div class="home-page-body">
+
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    {{!-- <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Button</button>
+                        </div>
+                    </div> --}}
+                    <li class="nav-item">
+                        {{#if logged_in}}
+                        <a href="/profile"><img src="{{ username.img }}" alt=""></a> |
+                        <button class="no-button nav-link" id="logout">Logout</button>
+                        {{else}}
+                        <a class="nav-link" href="/login">Login</a>
+                        {{/if}}                
+                    </li>
+                </ul>
+
                 <header>
                     <div class="welcome-hero">
                         <img src="/img/frame3.png" alt="leaves" class="home-frame">
 
                         <div class="hero-content">
-                            <h2>WELCOME TO</h2>
+                            {{!-- <h2>WELCOME TO</h2> --}}
                             <h1>Backyard Jungle</h1>
 
+                            <p>We're here to give you the space you need to nerd out on all things green</p>
+
                             <div class="button-box">
+                            
                                 <!-- These buttons trigger the modal -->
                                 <button class="btn custom-btn" data-toggle="modal"
                                     data-target="#project-modal">
@@ -132,13 +159,12 @@
                     </div>
                     <div class="teaser-card widget-teaser">
                         <img src="/img/weather.jpg" alt="">
-                        <h3>Use Our Widgets To Go The Extra Mile For Your Garden</h3>
+                        <h3>Go The Extra Mile With Our Widgets</h3>
                     </div>
                 </div>
 
                 <div class="github">
-                    <h2>Our app is always growing... Follow the creators on <a
-                            href="https://github.com/Anastasia095/Backyard-Jungle">Github</a> for updates!</h2>
+                    <h2>Our app changes like the seasons... Follow the creators on <a href="https://github.com/Anastasia095/Backyard-Jungle">Github</a> for updates!</h2>
                 </div>
             </div>
         </div>

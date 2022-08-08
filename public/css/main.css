@@ -14,8 +14,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--light);
-    font-size: 16px;
-    font-family: 'Public Sans', sans-serif;
+
+    font-size: 18px;
+    font-family: 'Public Sans', sans-serif;    
 }
 
 h1 {
@@ -47,8 +48,9 @@ ul {
     list-style: none;
 }
 
-.btn {
-    color: var(--light);
+
+.btn { 
+    color: var(--offWhite);
     border: 1px solid var(--standout);
     background-color: var(--standout);
     transition: .4s;
@@ -111,18 +113,28 @@ img {
     align-items: center;
 }
 
-.nav-item {
-    margin: 0 10px;
+
+.nav-item { 
+    width: 100px;
+    margin: 0 20px;
+    text-align: center;
+    border: 3px solid #c7efcd;
+    border-radius: 5px;
 }
 
-.nav-link:hover {
+.nav-item:hover { 
     color: var(--dark);
     background-color: #c7efcd;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.nav .input-group {
+
+.nav-item:active { 
+    border-bottom: var(--standout);
+}
+
+.nav .input-group { 
     width: 300px;
 }
 
@@ -157,17 +169,20 @@ footer ul li {
 /*  HOME PAGE  */
 .home-page-body {
     width: 100%;
-    background: linear-gradient(to bottom, #edffce 60%, #8DAA91);
+    background: linear-gradient(to bottom, #edffce 20%, #8DAA91);
+}
+
+.home-page-body .nav { 
+    display: flex;
+    justify-content: center;
 }
 
 .home-frame {
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: absolute; 
 }
 
-.welcome-hero {
-    margin-bottom: 50px;
+.welcome-hero { 
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -175,31 +190,32 @@ footer ul li {
 }
 
 .hero-content {
-    margin: 180px 0 100px 0;
+    margin: 180px 0 75px 0;
     z-index: 2;
 }
 
-.welcome-hero h1 {
-    margin: 50px 0 50px 0;
+.welcome-hero h1 { 
+    margin: 25px 0;
+    color: #0e1c0f;
     font-size: 5rem;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     word-spacing: 2rem;
+    text-shadow: 1px 1px 8px var(--standout);
 }
 
-.welcome-hero h2 {
+/* .welcome-hero h2 { 
     font-size: 3rem;
-}
+} */
 
-.welcome-hero button {
-    width: 150px;
-    margin: 0 30px;
+.welcome-hero button { 
+    width: 125px;
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
-.teaser {
-    padding: 15px 0;
-    margin: 15px 0;
+.teaser { 
+    margin: 30px;
+    padding: 30px 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -210,6 +226,7 @@ footer ul li {
 .teaser-card,
 .teaser-card img {
     width: 350px;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -246,9 +263,8 @@ footer ul li {
     cursor: pointer;
 }
 
-/* Placeing this out of logical order so the card itself doesn't take the padding */
 
-.github {
+.github { 
     margin: 100px 0;
     text-align: center;
 }
@@ -338,7 +354,7 @@ footer ul li {
 /*  Profile  */
 .profile-dashboard {
     width: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
     display: flex;
 }
 
@@ -354,33 +370,57 @@ footer ul li {
     justify-content: center;
 }
 
-.profile-info-img {
-    width: 75%;
+.profile-info-img { 
+    width: 100%;
     border-radius: 50%;
-    border: 1px solid var(--dark);
+    border: 5px solid var(--dark-middle);
 }
 
-.profile-info h3 {
-    padding: 30px 0;
+.profile-info > h3 { 
+    margin: 10px 0 20px 0;
+    color: var(--dark);
+}
+
+.widgets { 
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    text-align: center;
+    border: 3px solid var(--dark-middle);
+    border-radius: 5px;
+}
+
+.widgets h3 { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .profile-details {
     padding: 30px 0 30px 30px;
 }
 
-.profile-details h3 {
-    padding-bottom: 30px;
+.profile-details h3 { 
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .profile-details p {
     padding-bottom: 60px;
 }
 
-.garden-box {
+.profile-details .input-group { 
+    margin: 30px 0;
+}
+
+.garden-box { 
     display: flex;
 }
 
-.garden-box .card-body {
+.garden-box .card-body { 
     width: 20%;
     margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
@@ -388,11 +428,19 @@ footer ul li {
     display: flex;
 }
 
-.widgets {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid var(--dark);
+.post-card {
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    border: solid var(--dark-middle);
+    border-radius: 10px;
+}
+
+.post-top { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
@@ -461,3 +509,4 @@ footer ul li {
     border-radius: 10px;
 
 }
+

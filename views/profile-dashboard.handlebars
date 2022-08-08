@@ -5,24 +5,38 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
-        {{> tips-tile}}
         {{> weather-tile}}
+        {{> tips-tile}}
     </aside>
 
-    <section id="profile-details">
+    <section class="profile-details">
         <div>
             <h3>My Garden</h3>
-            <p class="garden-tile"></p>
-            <div class="wraper">
             {{#each plants as |plant|}}
-            {{> profile-garden-tiles}}
+                {{> profile-garden-tiles}}
             {{/each}}
+
+            <div class="input-group">
+                <form class="form-inline" id="plantSearch" action="http://localhost:3001/api/searchplant" method="post">
+                    <input type="search" id="pSearch" class="form-control" placeholder="Looking for something?"
+                        aria-label="Looking for something?" name="plant" aria-describedby="basic-addon2">
+                    <input class="btn primary-btn" type="submit" value="Search">
+                </form>
+                {{!-- <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="plantSearch" type="button" action="/#">Search</button>
+                </div> --}}
             </div>
-            {{#each post as |p|}}
-            {{> post-box}}
+
+            <h3>My Posts</h3>
+            {{#each post as |post|}}
+                {{> post-box}}
             {{/each}}
+
+
         </div>
 
+<<<<<<< HEAD
+=======
         <div class="input-group">
 
             <form id="plantSearch">
@@ -36,6 +50,7 @@
         </div>
 
 
+>>>>>>> main
 
     </section>
 
