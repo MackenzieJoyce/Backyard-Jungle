@@ -1,7 +1,7 @@
 <div class="add-post">
   <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">+</button>
 </div>
-
+ {{!-- START OF MODAL --}}
 <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog" aria-labelledby="project-modal-form"
   aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -42,13 +42,15 @@
     </div>
   </div>
 </div>
+
+{{!-- END OF MODAL --}}
 {{!--
 <div class="row mb-2">
   <div class="col-md-8">
     <h4><a href="/post/{{post.title}}">{{post.body}}</a></h4>
   </div>
 </div> --}}
-<div>
+{{!-- <div> --}}
 <h1>Community Posts</h1>
 {{#each post as |post|}}
 {{>post-box}}
@@ -58,11 +60,8 @@
 <div class="specific-category-list">
   <aside class="list-group">
     <h3>Communities</h3>
-    {{> category-list}}
+    {{#each categories as |category|}}
+      {{> category-list}}
+    {{/each}}
   </aside>
 
-  {{!-- <div class="forum-box">
-    <h3>{{category-title}}</h3>
-    {{> post-box}}
-  </div>
-</div> --}}

@@ -28,9 +28,18 @@ router.get('/', async (req, res) => {
       res.status(500).json(err)
     }
   
+
+})
   
-  
-  })
+
+router.get('/', async (req, res) => {
+
+  const categoryData = await Category.findAll().catch((err) => { 
+      res.json(err);
+    });
+      const categories = categoryData.map((category) => category.get({ plain: true }));
+      res.render('specific-forum', { layout: 'main', categories });
+    });
 
 //  //or like this?
 //   router.post('/', withAuth, async (req, res) => {
