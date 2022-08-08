@@ -30,7 +30,7 @@ Collection.belongsTo(User, {
 })
 
 Collection.hasMany(Plants, {
-  foreignKey: 'plantsId',
+  foreignKey: 'Id',
   onDelete: 'CASCADE'
 })
 
