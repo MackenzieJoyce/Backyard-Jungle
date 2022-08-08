@@ -55,37 +55,94 @@
                             <p>We're here to give you the space you need to nerd out on all things green</p>
 
                             <div class="button-box">
-                                <p>Join our growing community!</p>
-                                <!-- This button trigger the modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            
+                                <!-- These buttons trigger the modal -->
+                                <button class="btn custom-btn" data-toggle="modal"
+                                    data-target="#project-modal">
                                     Sign Up
                                 </button>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-  
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <button class="btn custom-btn" data-toggle="modal"
+                                    data-target="#project-modal">
+                                    Login
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            </div>
                         </div>
                     </div>
+
+                    <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
+                        aria-labelledby="project-modal-form" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content opacity-2">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="mcustom">
+                                    <div class="login-forms row justify-space-between-md">
+                                        <div class="login-card">
+                                            <h2 class="page-title">Login</h2>
+
+                                            <form class="form login-form">
+                                                <div class="form-group">
+                                                    <label for="email-login">Email</label>
+                                                    <input class="form-input" type="text" id="email-login" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password-login">Password</label>
+                                                    <input class="form-input" type="password" id="password-login" />
+                                                </div>
+                                                <div class="form-group-btn">
+                                                    <button class="btn btn-primary loginBtn"
+                                                        type="submit">Login</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                        <div class="login-forms row justify-space-between-md">
+                                            <div class="login-card">
+                                                <h2 class="page-title">SignUp</h2>
+                                                <form class="form signup-form">
+                                                    <div class="form-group">
+                                                        <label for="username-signup">Username</label>
+                                                        <input class="form-input" type="text" id="username-signup" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email-signup">Email</label>
+                                                        <input class="form-input" type="text" id="email-signup" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password-signup">Password</label>
+                                                        <input class="form-input" type="password"
+                                                            id="password-signup" />
+                                                    </div>
+                                                    <div class="form-group-btn">
+                                                        <button class="btn btn-primary" type="submit">SignUp</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -131,6 +188,12 @@
     </footer>
     <script src="/js/login.js"></script>
     <script src="/js/login-modal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
