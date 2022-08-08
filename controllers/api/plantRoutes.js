@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Plants } = require('../../models');
 const { Op } = require("sequelize");
 const fetch = require('node-fetch');
+const SerpApi = require('google-search-results-nodejs');
+const search = new SerpApi.GoogleSearch("a508546002aaddab686e3ca16a67b774e423d7c4721da73a71d89bd8effaf696");
 
 //options for image api
 const apiKey = 'AIzaSyAOMapkVritaEyTjG9qlmwvX5q_CjvsrX4';
@@ -31,11 +33,30 @@ router.get('/', async (req, res) => {
         limit: 8
     });
 
+    
+
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
-    console.log(plants[4]);
-    console.log(plants);
-    res.render('profile-dashboard', { layout: 'main', plants });
+    console.log([plants[0].Common_Name])
+
+
+    const params = {
+        engine: "yandex_images",
+        text: plants[0].Common_Name,
+        yandex_domain: "yandex.ru"
+      };
+      
+      const callback = function(data) {
+        console.log(data["images_results"][0].thumbnail);
+        plants[0]['URL'] = data["images_results"][0].thumbnail;
+        res.render('profile-dashboard', { layout: 'main', plants });
+      };
+      
+      // Show result as JSON
+      search.json(params, callback);
+    // console.log(plants[4]);
+    // console.log(plants);
+
 
 });
 

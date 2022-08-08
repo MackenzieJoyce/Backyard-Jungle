@@ -32,36 +32,36 @@ router.get('/', async (req, res, next) => {
 
 })
 
-router.get('/', async (req, res,) => {
-  try {
-    // Get all comments and JOIN with user data
-    const collectionData = await Collection.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ['user_name']
-      //   },
-      //   {
-      //     model: Plants,
-      //     attributes: ['id']
-      //   },
-      // ]
-    })
+// router.get('/', async (req, res,) => {
+//   try {
+//     // Get all comments and JOIN with user data
+//     const collectionData = await Collection.findAll({
+//       // include: [
+//       //   {
+//       //     model: User,
+//       //     attributes: ['user_name']
+//       //   },
+//       //   {
+//       //     model: Plants,
+//       //     attributes: ['id']
+//       //   },
+//       // ]
+//     })
 
-    // Serialize data so the template can read it
-    const collection = collectionData.map((post) => post.get({ plain: true }))
-    // console.log(post);
-    // console.log(post[0].user.user_name);
-    // console.log(post.user.user_name);
-    console.log(collection);
-    // Pass serialized data and session flag into template
-    res.render('profile-dashboard', { layout: 'main' , collection })
-  } catch (err) {
-    res.status(500).json(err)
-  }
+//     // Serialize data so the template can read it
+//     const collection = collectionData.map((post) => post.get({ plain: true }))
+//     // console.log(post);
+//     // console.log(post[0].user.user_name);
+//     // console.log(post.user.user_name);
+//     console.log(collection);
+//     // Pass serialized data and session flag into template
+//     res.render('profile-dashboard', { layout: 'main' , collection })
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
   
 
-})
+// })
 
 router.get('/post/:id', async (req, res) => {
   try {
