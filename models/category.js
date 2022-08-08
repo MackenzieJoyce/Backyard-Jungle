@@ -13,7 +13,7 @@ Category.init(
       autoIncrement: true
     },
     title: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
     filename: {

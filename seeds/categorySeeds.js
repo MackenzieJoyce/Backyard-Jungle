@@ -23,7 +23,7 @@ const categoryData = [
   },
   {
     title: 'Succulents',
-    filename: 'succlents.jpg'
+    filename: 'suc.png'
   },
   {
     title: 'Edible Plants',
