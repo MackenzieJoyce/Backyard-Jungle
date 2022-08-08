@@ -1,3 +1,7 @@
+<div class="categories-intro">
+    <h1>Category: {{title}}</h2>
+</div>
+
 {{!-- <div class="add-post">
   <i class="fa-solid fa-circle-plus" data-toggle="modal" data-target="#project-modal">f055;</i>
 </div> --}}
@@ -48,19 +52,7 @@
 {{!-- END OF MODAL --}}
 
 
-
 <div class="specific-forum-content">
-  
-  <div>
-    <h1>Community Posts</h1>
-    {{#each post as |post|}}
-      {{>post-box}}
-    {{/each}}
-  </div
-  </div>
-
-
-
   <div class="specific-category-list">
     <aside class="list-group">
       <h3>Communities</h3>
@@ -68,5 +60,13 @@
         {{> category-list}}
       {{/each}}
     </aside>
+  </div>
+
+  <div class="specific-forum-post">
+    <h1>Community Posts</h1>
+    {{#each post as |post|}}
+      {{>post-box}}
+    {{/each}}
+  </div
   </div>
 </div>
