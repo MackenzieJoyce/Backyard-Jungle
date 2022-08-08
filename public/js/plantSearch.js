@@ -12,11 +12,11 @@ const searchFormHandler = async (event) => {
 
 
     // Send a GET request to the API endpoint
-    const response = await fetch('http://localhost:3001/api/searchplant?plant=' 
-    + qJoined , {
+    const response = await fetch('http://localhost:3001/api/searchplant?plant='
+        + qJoined, {
         headers: { 'Content-Type': 'application/json' }
     });
-    
+
     if (response.ok) {
         document.location.replace('/api/searchplant?plant=' + qJoined);
     } else {
@@ -26,5 +26,34 @@ const searchFormHandler = async (event) => {
 };
 
 document
-.getElementById('plantSearch')
-.addEventListener('submit', searchFormHandler);
+    .getElementById('plantSearch')
+    .addEventListener('submit', searchFormHandler);
+
+//******************************* */
+// WEATHER API BELOW
+
+var weather = {
+    APIKey: "d23ee897efa94295b3514040220808",
+    myURL: 'http://api.weatherapi.com/v1/current.json?key=',
+    fetchWeather: function () {
+
+        fetch(this.myURL + this.APIKey + '&q=auto:ip')
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => this.displayWeather(data));
+    },
+    displayWeather: function (data) {
+        console.log(data);
+        console.log(data.current.condition.icon);
+        document.getElementById("icon").src = data.current.condition.icon;
+        document.getElementById("city").innerText  = data.location.name;
+        document.querySelector(".temp").innerText = "Temp: " + data.current.feelslike_f + " °F";
+        document.querySelector(".wind").innerText = "Wind: " + data.current.wind_mph + " MPH";
+        document.querySelector(".humidity").innerText = "Humidity: " + data.current.humidity + "%";
+   }
+
+
+};
+
+weather.fetchWeather();
