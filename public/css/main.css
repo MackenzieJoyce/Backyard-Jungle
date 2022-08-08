@@ -423,13 +423,13 @@ footer ul li {
     border-radius: 5px;
 }
 
-.widgets h3 { 
-    padding: 5px;
+.widget-top { 
+    padding: 10px;
     background-color: var(--standout);
     color: var(--offWhite);
     font-weight: 600;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .profile-details {
@@ -443,10 +443,6 @@ footer ul li {
 
 .profile-details p {
     padding-bottom: 60px;
-}
-
-.profile-details .input-group { 
-    margin: 30px 0;
 }
 
 .garden-box { 
