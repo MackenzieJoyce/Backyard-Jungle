@@ -238,8 +238,6 @@ footer ul li {
     cursor: pointer;
 }
 
-/* Placeing this out of logical order so the card itself doesn't take the padding */
-
 .github { 
     margin: 100px 0;
     text-align: center;
@@ -328,7 +326,7 @@ footer ul li {
 /*  Profile  */
 .profile-dashboard { 
     width: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
     display: flex;
 }
 
@@ -344,14 +342,33 @@ footer ul li {
     justify-content: center;
 }
 
-.profile-info-img { 
-    width: 75%;
+.profile-info img { 
+    width: 100%;
     border-radius: 50%;
-    border: 1px solid var(--dark);
+    border: 5px solid var(--dark-middle);
 }
 
-.profile-info h3 { 
-    padding: 30px 0;
+.profile-info > h3 { 
+    margin: 10px 0 20px 0;
+    color: var(--dark);
+}
+
+.widgets { 
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    text-align: center;
+    border: 3px solid var(--dark-middle);
+    border-radius: 5px;
+}
+
+.widgets h3 { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .profile-details { 
@@ -359,18 +376,23 @@ footer ul li {
 }
 
 .profile-details h3 { 
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .profile-details p { 
     padding-bottom: 60px;
 }
 
+.profile-details .input-group { 
+    margin: 30px 0;
+}
+
 .garden-box { 
     display: flex;
 }
 
-.garden-box .card-body{ 
+.garden-box .card-body { 
     width: 20%;
     margin: 20px 20px 20px 0;
     border: 1px solid var(--dark);
@@ -378,11 +400,19 @@ footer ul li {
     display: flex;
 }
 
-.widgets { 
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    border: 1px solid var(--dark);
+.post-card {
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    border: solid var(--dark-middle);
+    border-radius: 10px;
+}
+
+.post-top { 
+    padding: 5px;
+    background-color: var(--touches);
+    color: var(--offWhite);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
@@ -442,11 +472,3 @@ footer ul li {
     border: 1px solid var(--light);
 }
 
-.post-card{
-    padding: 1%;
-    margin: 0.5%;
-    border: solid;
-    border-color: darkgreen;
-    border-radius: 10px;
-
-}
