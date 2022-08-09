@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plants } = require('../../models');
+const { Plants, Collection } = require('../../models');
 const { Op } = require("sequelize");
 const fetch = require('node-fetch');
 const SerpApi = require('google-search-results-nodejs');
@@ -37,6 +37,9 @@ router.get('/', async (req, res) => {
     const plants = plantData.map((plant) => plant.get({ plain: true }));
     console.log([plants[0].Common_Name])
 
+    console.log(plants);
+
+
     if (plants[0].img_url == null){
     const params = {
         engine: "yandex_images",
@@ -64,5 +67,22 @@ router.get('/', async (req, res) => {
     }
 
 });
+
+router.post('/add', async (req, res) => {
+    console.log("request received!")
+    console.log(req.body.plant_id)
+    console.log(req.session)
+    console.log(req.session.user_id)
+    try {
+        const collectionAdd = await Collection.create({
+          plant_id: req.body.plant_id,
+          user_id: req.session.user_id,
+        });
+    
+        res.status(200).json(collectionAdd);
+      } catch (err) {
+        res.status(400).json(err);
+      }
+  });
 
 module.exports = router;

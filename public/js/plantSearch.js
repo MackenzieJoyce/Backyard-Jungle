@@ -1,7 +1,6 @@
 console.log("HEY! I am plant search JS file and Im connected!");
 
 
-//Right now it will only search potato no matter what you entered.
 const searchFormHandler = async (event) => {
     event.preventDefault();
     console.log("Click Click!")
@@ -47,13 +46,40 @@ var weather = {
         console.log(data);
         console.log(data.current.condition.icon);
         document.getElementById("icon").src = data.current.condition.icon;
-        document.getElementById("city").innerText  = data.location.name;
+        document.getElementById("city").innerText = data.location.name;
         document.querySelector(".temp").innerText = "Temp: " + data.current.feelslike_f + " °F";
         document.querySelector(".wind").innerText = "Wind: " + data.current.wind_mph + " MPH";
         document.querySelector(".humidity").innerText = "Humidity: " + data.current.humidity + "%";
-   }
+    }
 
 
 };
 
 weather.fetchWeather();
+
+/************************************************************** */
+const addBtnHandler = async (event) => {
+    event.preventDefault();
+    console.log("Click Click Click!")
+    // Collect values from the login form
+    const plant_id = document.getElementById('sciname').textContent.trim();
+
+    // Send a POST request to the API endpoint
+    const response = await fetch('http://localhost:3001/api/searchplant/add', {
+        method: 'POST',
+        body: JSON.stringify({ plant_id }),
+        headers: { 'Content-Type': 'application/json' },
+
+    });
+
+    if (response.ok) {
+        document.location.replace('/api/profile');
+    } else {
+        console.log("Failed to add to collection...")
+    }
+
+};
+
+document
+    .getElementById('addPlant')
+    .addEventListener('click', addBtnHandler);

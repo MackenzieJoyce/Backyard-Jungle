@@ -10,6 +10,8 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
+      //added this to get user ID saved to session///ANA
+      req.session.user_id = userData.id;
       req.session.loggedIn = true;
 
        res.status(200).json(userData);
@@ -35,6 +37,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.user_id = userData.id;
       req.session.loggedIn = true;
       console.log(
         '~ file: userRoutes.js ~ line 40 ~ req.session.save ~ req.session.cookie',
