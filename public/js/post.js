@@ -4,7 +4,7 @@ const newPostHandler = async (event) => {
   const title = document.querySelector('#titlepost-name-input').value.trim();
   const body = document.querySelector('#post-input').value.trim();
   const type = document.querySelector('#post-type-input').value.trim();
-
+ 
   if (title && body && type) {
     const response = await fetch(`/forum`, {
       method: 'POST',
@@ -16,7 +16,7 @@ const newPostHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/forum');
+      document.location.replace('/api/profile');
     } else {
       alert('Failed to create post');
     }

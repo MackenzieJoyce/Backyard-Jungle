@@ -2,8 +2,8 @@
 :root {
     --dark: #223F4F;
     --dark-middle: #737f5f;
-    --middle: #A8B088;
-    --light: #edffce;
+    --middle: #93a674;
+    --light: #f4ffe1;
     --offWhite: #f6fff3;
     --standout: #a4725c;
     --touches: #e979a0;
@@ -100,7 +100,7 @@ img {
 }
 
 .gcard-body {
-    background-color: #647646;
+    background-color: var(--middle);
     padding: 0.5%;
     margin: 0.5%;
     text-align: center;
@@ -186,7 +186,10 @@ footer {
     padding: 10px 0;
     background-color: var(--middle);
     text-align: center;
+    position: static;
+    bottom: 0;
 }
+
 
 footer ul {
     margin: 0;
@@ -226,6 +229,13 @@ footer ul li {
     align-items: center;
 }
 
+.about-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hero-content {
     margin: 225px 0 75px 0;
     z-index: 2;
@@ -238,6 +248,14 @@ footer ul li {
     letter-spacing: .2rem;
     word-spacing: 2rem;
     text-shadow: 1px 1px 8px var(--standout);
+}
+
+.about-hero h1 {
+    margin: 10px;
+    color: #0e1c0f;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    word-spacing: 2rem;
 }
 
 /* .welcome-hero h2 { 
@@ -431,7 +449,7 @@ footer ul li {
     border: 5px solid var(--dark-middle);
 }
 
-.profile-info>h3 {
+.profile-info h3 {
     margin: 10px 0 20px 0;
     color: var(--dark);
 }
@@ -589,3 +607,71 @@ footer ul li {
     border-radius: 10px;
 
 }
+
+
+
+/* CONTACT */
+.contact-content { 
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team-tile { 
+    width: 25%;
+    margin: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-content { 
+    width: 100%;
+    background-color: var(--offWhite);
+    border: 3px solid var(--dark-middle);
+    border-radius: 5px;
+}
+
+.team-content { 
+    margin-top: 10px;
+}
+
+.team-content p { 
+    padding: 10px;
+}
+
+.team-tile a { 
+    color: var(--standout);
+}
+
+.team-tile a:hover { 
+    color: var(--dark);
+}
+/* 
+.team-content { 
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    border-radius: 5px;
+} */
+
+
+
+/* ABOUT */
+.about-text { 
+    width: 50%;
+    margin: 30px 0;
+    padding: 10px 20px;
+    border: 1px solid var(--standout);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text p { 
+    margin-bottom: 30px;
+}
+
