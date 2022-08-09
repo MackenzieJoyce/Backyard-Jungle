@@ -8,6 +8,12 @@ Post.init(
   //title, type string, allow null false
   //body, type string, allow null false
   {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -20,6 +26,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   }, 
   {
     sequelize,
