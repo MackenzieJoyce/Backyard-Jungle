@@ -186,7 +186,7 @@ footer {
     padding: 10px 0;
     background-color: var(--middle);
     text-align: center;
-    position: absolute;
+    position: static;
     bottom: 0;
 }
 
