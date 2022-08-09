@@ -5,7 +5,7 @@ const User = require('./User');
 const Category = require('./category');
 const Collection = require('./collection');
 
-
+//TO DO change associations for plants belong to Users through collection
 Post.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
@@ -32,7 +32,7 @@ Collection.belongsTo(User, {
 })
 
 Collection.hasMany(Plants, {
-  foreignKey: 'id',
+  foreignKey: 'collection_id',
   onDelete: 'CASCADE'
 })
 

@@ -1,11 +1,11 @@
 <div class="gcard-body" style="width: 18rem;">
-  {{#if plants.img_url}}
-  <img src="{{collection.img_url}}" class="card-img-top">
+  {{#if img_url}}
+  <img src="{{img_url}}" class="card-img-top">
   {{else}}
   <img src="https://www.wasaweb.net/images/thumbnails/512x512-flowers-488.jpg" class="card-img-top">
   {{/if}}
-  <h3 class="card-title">{{plants.img_url}}</h3>
-  <h3 class="card-title">{{collection.Common_Name}}</h3>
+  <h3 class="card-title">{{Scientific_Name}}</h3>
+  <h3 class="card-title">{{Common_Name}}</h3>
   <div class="ifInfo">
     <h6>ID:<span class="ifInfo" id="sciname">
         {{id}}
