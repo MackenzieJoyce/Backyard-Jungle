@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category } = require('../models');
+const { Plants, Category } = require('../models');
 
 router.get('/', async (req, res) => {
     console.log('communities route TEST!');
