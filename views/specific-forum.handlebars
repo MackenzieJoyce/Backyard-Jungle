@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="Enter your description here" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-
-<div class="add-post">
-  <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">+</button>
+<div class="categories-intro">
+  <h2>Placeholder</h2>
+    {{!-- <h1>{{id}}</h2> --}}
 </div>
 
+{{!-- <div class="add-post">
+  <i class="fa-solid fa-circle-plus" data-toggle="modal" data-target="#project-modal">f055;</i>
+</div> --}}
+
+
+ {{!-- START OF MODAL --}}
 <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog" aria-labelledby="project-modal-form"
   aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -54,38 +49,25 @@
     </div>
   </div>
 </div>
-{{!--
-<div class="row mb-2">
-  <div class="col-md-8">
-    <h4><a href="/post/{{post.title}}">{{post.body}}</a></h4>
+
+{{!-- END OF MODAL --}}
+
+
+<div class="specific-forum-content">
+  
+  <div class="specific-category-list">
+    <aside class="list-group">
+      <h3>Communities</h3>
+      {{#each categories as |category|}}
+        {{> category-list}}
+      {{/each}}
+    </aside>
   </div>
-</div> --}}
-<div>
-<h1>Community Posts</h1>
-{{#each post as |post|}}
-{{>post-box}}
-{{/each}}
+
+  <div class="specific-forum-post">
+    {{#each post as |post|}}
+      {{>post-box}}
+    {{/each}}
+  </div>
+  
 </div>
-
-<div class="specific-category-list">
-  <aside class="list-group">
-    <h3>Communities</h3>
-    {{> category-list}}
-  </aside>
-
-  {{!-- <div class="forum-box">
-    <h3>{{category-title}}</h3>
-    {{> post-box}}
-  </div>
-</div> --}}
-
-
-</body>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<script src="../public/js/post.js"></script>
-
-</html>

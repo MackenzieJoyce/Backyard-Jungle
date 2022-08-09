@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 // router.get('/forum', async (req, res) => {
@@ -7,30 +7,46 @@ const withAuth = require('../utils/auth');
 // });
 
 router.get('/', async (req, res) => {
-    console.log("FORUM ROUTES TEST!")
-    try {
-      // Get all comments and JOIN with user data
-      const postData = await Post.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['user_name']
-          }
-        ]
-      })
+  console.log("FORUM ROUTES TEST!")
+  try {
+    // Get all comments and JOIN with user data
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['user_name']
+        },
+      ]
+    })
+
+    const categoryData = await Category.findAll()
   
-      // Serialize data so the template can read it
-      const post = postData.map((post) => post.get({ plain: true }))
-      console.log(post);
-      // Pass serialized data and session flag into template
-      res.render('specific-forum', { layout: 'main' , post })
-    } catch (err) {
-      res.status(500).json(err)
-    }
+    // Serialize data so the template can read it
+    const post = postData.map((post) => post.get({ plain: true }))
+    console.log(post);
+    const categories = categoryData.map((category) => category.get({ plain: true }))
+    console.log(categories);
+    // Pass serialized data and session flag into template
+    res.render('specific-forum', { layout: 'main', post, categories })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+}) 
+
+  // const categoryData = await Category.findAll().catch((err) => { 
+  //   res.json(err);
+  // });
+  //   const categories = categoryData.map((category) => category.get({ plain: true }));
+  //   res.render('specific-forum', { layout: 'main', categories });
+  // });
   
+
+// })
   
-  
-  })
+
+// router.get('/', async (req, res) => {
+
+
 
 //  //or like this?
 //   router.post('/', withAuth, async (req, res) => {
@@ -46,4 +62,4 @@ router.get('/', async (req, res) => {
 //     }
 //   });
 
-module.exports = router;
+  module.exports = router;
