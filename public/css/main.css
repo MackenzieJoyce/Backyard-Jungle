@@ -589,3 +589,55 @@ footer ul li {
     border-radius: 10px;
 
 }
+
+
+
+
+
+
+
+/* CONTACT */
+.contact-content { 
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team-tile { 
+    width: 25%;
+    margin: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-content { 
+    width: 100%;
+    background-color: var(--offWhite);
+    border: 3px solid var(--dark-middle);
+    border-radius: 5px;
+}
+
+.team-content { 
+    margin-top: 10px;
+}
+
+.team-content p { 
+    padding: 10px;
+}
+
+.team-tile a { 
+    color: var(--standout);
+}
+
+.team-tile a:hover { 
+    color: var(--dark);
+}
+/* 
+.team-content { 
+    margin-bottom: 30px;
+    background-color: var(--offWhite);
+    border-radius: 5px;
+} */
