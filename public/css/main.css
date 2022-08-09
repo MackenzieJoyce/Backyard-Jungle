@@ -2,8 +2,8 @@
 :root {
     --dark: #223F4F;
     --dark-middle: #737f5f;
-    --middle: #A8B088;
-    --light: #edffce;
+    --middle: #93a674;
+    --light: #f4ffe1;
     --offWhite: #f6fff3;
     --standout: #a4725c;
     --touches: #e979a0;
@@ -100,7 +100,7 @@ img {
 }
 
 .gcard-body {
-    background-color: #647646;
+    background-color: var(--middle);
     padding: 0.5%;
     margin: 0.5%;
     text-align: center;
@@ -448,7 +448,7 @@ footer ul li {
     border: 5px solid var(--dark-middle);
 }
 
-.profile-info>h3 {
+.profile-info h3 {
     margin: 10px 0 20px 0;
     color: var(--dark);
 }
