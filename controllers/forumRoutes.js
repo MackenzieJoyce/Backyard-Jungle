@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 // router.get('/forum', async (req, res) => {
@@ -7,6 +7,7 @@ const withAuth = require('../utils/auth');
 // });
 
 router.get('/', async (req, res) => {
+
     try {
       const postData = await Post.findAll({
         include: [
@@ -23,10 +24,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
       res.status(500).json(err)
     }
-  
-  
-  
-  })
+  });
 
 //  //or like this?
   router.post('/', async (req, res) => {
@@ -46,4 +44,4 @@ router.get('/', async (req, res) => {
     }
   });
 
-module.exports = router;
+  module.exports = router;
