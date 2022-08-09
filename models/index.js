@@ -1,8 +1,9 @@
-const Plants = require('./plants')
-const Post = require('./post')
-const Comment = require('./comment')
-const User = require('./User')
-const Category = require('./category')
+const Plants = require('./plants');
+const Post = require('./post');
+const Comment = require('./comment');
+const User = require('./User');
+const Category = require('./category');
+const Collection = require('./collection');
 // const Collection = require('./collection')
 
 Post.belongsTo(User, {
@@ -25,21 +26,21 @@ Comment.belongsTo(User, {
   onDelete: 'CASCADE'
 })
 
-// Collection.belongsTo(User, {
-//   foreignKey: 'userId',
-//   onDelete: 'CASCADE'
-// })
+Collection.belongsTo(User, {
+  foreignKey: 'id',
+  onDelete: 'CASCADE'
+})
 
-// Collection.hasMany(Plants, {
-//   foreignKey: 'Id',
-//   onDelete: 'CASCADE'
-// })
+Collection.hasMany(Plants, {
+  foreignKey: 'id',
+  onDelete: 'CASCADE'
+})
 
 module.exports = {
   Plants,
   Post,
   Comment,
   User,
-  Category
-  // Collection
+  Category,
+  Collection
 }
