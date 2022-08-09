@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth')
 ///THIS IS GETTING THE POSTS
 router.get('/', async (req, res) => {
   try {
+    // Get all comments and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -13,29 +14,18 @@ router.get('/', async (req, res) => {
           attributes: ['user_name']
         }
       ]
-
     })
-
     const userData = await User.findByPk(req.session.user_id, {
        attributes: { exclude: ['password'] },
       })
 
-      const user = userData.get({ plain: true })
+    const user = userData.get({ plain: true })
 // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
 
-    const collectionData = await Collection.findAll({
-      include: Plants
-
-    })
-    // Serialize data so the template can read it
-    const collection = collectionData.map((collection) => collection.get({ plain: true }));
-    // console.log(collection[0])
-    console.log(collection[0].plants.Scientific_Name)
-  
     // Pass serialized data and session flag into template
 
-    res.render('profile-dashboard', { layout: 'main', post, ...user })
+    res.render('profile-dashboard', { layout: 'main', post, logged_in:req.session.logged_in, ...user })
   } catch (err) {
     res.status(500).json(err)
   }
