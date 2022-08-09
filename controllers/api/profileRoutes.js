@@ -16,6 +16,14 @@ router.get('/', async (req, res) => {
 
     })
 
+    const userData = await User.findByPk(req.session.user_id, {
+       attributes: { exclude: ['password'] },
+      })
+
+      const user = userData.get({ plain: true })
+// Serialize data so the template can read it
+    const post = postData.map((post) => post.get({ plain: true }))
+
     const collectionData = await Collection.findAll({
       include: Plants
 
@@ -27,7 +35,8 @@ router.get('/', async (req, res) => {
     console.log(collection[0].plants.Scientific_Name)
   
     // Pass serialized data and session flag into template
-    res.render('profile-dashboard', { layout: 'main', post, collection })
+
+    res.render('profile-dashboard', { layout: 'main', post, ...user })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -155,25 +164,6 @@ router.get('/collection/:id', async (req, res) => {
     res.status(500).json(err)
   }
 })
-
-// Use withAuth middleware to prevent access to route
-// router.get('/', async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-
-//     })
-
-//     const user = userData.get({ plain: true })
-//     res.render('profile-dashboard', { layout: 'main',
-//       ...user,
-//       logged_in: true
-//     })
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-// })
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
