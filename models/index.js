@@ -4,7 +4,7 @@ const Comment = require('./comment');
 const User = require('./User');
 const Category = require('./category');
 const Collection = require('./collection');
-
+// const Collection = require('./collection')
 
 Post.belongsTo(User, {
   foreignKey: 'userId',

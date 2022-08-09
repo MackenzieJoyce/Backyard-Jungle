@@ -72,7 +72,6 @@ router.get('/', withAuth, async (req, res) => {
 router.post('/add', withAuth, async (req, res) => {
     console.log("request received!")
     console.log(req.body.plant_id)
-    console.log("log session below")
     console.log(req.session)
     console.log(req.session.user_id)
     try {
