@@ -5,9 +5,31 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
-        {{> weather-tile}}
-        {{> tips-tile}}
-    </aside>
+
+        <section class="widgets">
+            <div class="weather">
+                <div class="widget-top">
+                    <h3>Local Weather</h3>
+                </div>
+                <img class="icon" src="" id="icon">
+                <h3 id="city">Weather in</h3>
+                <p id="weather"></p>
+                <p class="temp"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+            </div>
+        </section>        
+       
+        <section class="widgets">
+            <div class="tips">
+                <div class="widget-top">
+                    <h3>Tips</h3>
+                </div>
+                <p id="tips"></p>
+            </div>
+        </section>    
+
+</aside>
 
     <section class="profile-details">
         <div>
@@ -17,13 +39,13 @@
                 {{> profile-garden-tiles}}
             {{/each}}
             </div>
-            <div class="input-group">
-                <form id="plantSearch">
-                    <input type="text" id="pSearch" class="form-control" placeholder="Looking for something?"
-                        aria-label="Looking for something?" name="plant" aria-describedby="basic-addon2">
-                    <input class="btn primary-btn" type="submit" value="Search">
-                    </form>
-            </div>
+
+            <nav class="input-group">
+                <form class="form-inline">
+                    <input class="form-control" id="pSearch" type="search" placeholder="Looking for something?" aria-label="Looking for something?">
+                </form>
+                <button class="btn" type="submit">Search</button>
+            </nav>
 
             <h3>My Posts</h3>
             {{#each post as |post|}}
@@ -32,9 +54,7 @@
 
 
         </div>
-        <div class="input-group">
 
-        </div>
     </section>
 
 </div>
