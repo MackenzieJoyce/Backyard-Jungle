@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
       console.log(userData);
       //added this to get user ID saved to session///ANA
       req.session.user_id = userData.id;
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
 
       res.status(200).json(userData);
     });
@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       console.log(
         '~ file: userRoutes.js ~ line 40 ~ req.session.save ~ req.session.cookie',
         req.session.cookie

@@ -5,8 +5,8 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
-    
-       
+
+
         <section class="widgets">
             <div class="weather">
                 <div class="widget-top">
@@ -29,11 +29,11 @@
                 </div>
                 <p id="tips"></p>
             </div>
-        </section>    
+        </section>
 
 
 
-</aside>
+    </aside>
 
     <section class="profile-details">
         <div>
@@ -43,6 +43,12 @@
                 {{> profile-garden-tiles}}
                 {{/each}}
             </div>
+            <div class="wraper">
+                {{#each cplants as |cplant|}}
+                {{> collection}}
+                {{/each}}
+            </div>
+
 
             <div class="input-group searchf">
                 <form id="plantSearch">
