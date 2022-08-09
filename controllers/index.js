@@ -11,6 +11,6 @@ router.use('/communities', communityRoutes)
 router.use('/about', aboutRoutes)
 router.use('/contact', contactRoutes)
 router.use('/forum', forumRoutes)
-router.use('/home', homepageRoutes)
+router.use('/', homepageRoutes)
 
 module.exports = router
