@@ -226,6 +226,13 @@ footer ul li {
     align-items: center;
 }
 
+.about-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .hero-content {
     margin: 225px 0 75px 0;
     z-index: 2;
@@ -238,6 +245,14 @@ footer ul li {
     letter-spacing: .2rem;
     word-spacing: 2rem;
     text-shadow: 1px 1px 8px var(--standout);
+}
+
+.about-hero h1 {
+    margin: 10px;
+    color: #0e1c0f;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+    word-spacing: 2rem;
 }
 
 /* .welcome-hero h2 { 
@@ -592,10 +607,6 @@ footer ul li {
 
 
 
-
-
-
-
 /* CONTACT */
 .contact-content { 
     width: 80%;
@@ -641,3 +652,23 @@ footer ul li {
     background-color: var(--offWhite);
     border-radius: 5px;
 } */
+
+
+
+/* ABOUT */
+.about-text { 
+    width: 50%;
+    margin: 30px 0;
+    padding: 10px 20px;
+    border: 1px solid var(--standout);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text p { 
+    margin-bottom: 30px;
+}
+
