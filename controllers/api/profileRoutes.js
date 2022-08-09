@@ -28,25 +28,25 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
 
-    // console.log(post);
+    console.log(post);
 
-    // const collectionData = await Collection.findAll({
-    //     include: Plants
-    // }
-    // )
+    const collectionData = await Collection.findAll({
+        include: Plants
+    }
+    )
 
     // Serialize data so the template can read it
-    // const collection = collectionData.map((collection) => collection.get({ plain: true }));
-    // console.log(collection[0])
-    // console.log(collection[0].plants.Scientific_Name)
-    // console.log("collection");
-    // console.log(collection);
-    // console.log(collection[0].plants.img_url);
-    // const cplants = collection[0].plants;
-    // console.log(cplants);
+    const collection = collectionData.map((collection) => collection.get({ plain: true }));
+    console.log(collection[0])
+    console.log(collection[0].plants.Scientific_Name)
+    console.log("collection");
+    console.log(collection);
+    console.log(collection[0].plants.img_url);
+    const cplants = collection[0].plants;
+    console.log(cplants);
     // Pass serialized data and session flag into template
 
-    res.render('profile-dashboard', { layout: 'main', post, ...user})
+    res.render('profile-dashboard', { layout: 'main', post, ...user, cplants})
   } catch (err) {
     res.status(500).json(err)
   }
