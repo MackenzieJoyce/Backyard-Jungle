@@ -11,7 +11,8 @@ const apiKey = 'AIzaSyAOMapkVritaEyTjG9qlmwvX5q_CjvsrX4';
 const searchEID = '41f8fc9ff288c4c86';
 
 //figure out in what format to pass in data and test if teh query actually works, also need || && separate properties one of the names might not match the search string
-router.get('/', withAuth, async (req, res) => {
+// router.get('/', withAuth, async (req, res) => {
+  router.get('/', async (req, res) => {
     console.log("REQUEST QUERY TEST: " + req.query)
     console.log(req.query)
     console.log(req.query.plant)
@@ -68,10 +69,11 @@ router.get('/', withAuth, async (req, res) => {
     }
 
 });
-
-router.post('/add', withAuth, async (req, res) => {
+router.post('/add', async (req, res) => {
+// router.post('/add', withAuth, async (req, res) => {
     console.log("request received!")
     console.log(req.body.plant_id)
+    console.log("log session below")
     console.log(req.session)
     console.log(req.session.user_id)
     try {

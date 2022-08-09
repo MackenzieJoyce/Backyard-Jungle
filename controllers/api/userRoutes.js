@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   console.log('USERROUTES')
+  console.log(req.body);
   try {
     const userData = await User.create({
       user_name: req.body.user_name,
@@ -10,16 +11,20 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
+      console.log("userData")
+      console.log(userData);
       //added this to get user ID saved to session///ANA
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
 
-       res.status(200).json(userData);
+      res.status(200).json(userData);
     });
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
+
 
 router.post('/login', async (req, res) => {
   try {
@@ -48,9 +53,9 @@ router.post('/login', async (req, res) => {
         .status(200)
         .json({ user: userData, message: 'You are now logged in!' });
 
-  });
-}
-    catch (err) {
+    });
+  }
+  catch (err) {
     console.log('login error')
     res.status(500).json(err);
   }

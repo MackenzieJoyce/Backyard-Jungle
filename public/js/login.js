@@ -1,6 +1,7 @@
 console.log("HEY IM TEST!")
 async function signupFormHandler(event) {
     event.preventDefault();
+    console.log("login JS file")
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const user_name = document.querySelector('#username-signup').value.trim();
@@ -39,6 +40,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
+            console.log("RESPONSE isOKAY!")
             document.location.replace('/api/profile/');
         } else {
             alert(response.statusText);
