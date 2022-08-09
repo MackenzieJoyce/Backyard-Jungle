@@ -8,7 +8,7 @@ const userPost = [
     },
     {
         title:"Jasmine in the Air",
-        body: "In order to get your jasmine flowers to  have a strong smell, spritz them with some water so simulate morning dew. They will stay fragrant through the day",
+        body: "In order to get your jasmine flowers to  have a strong smell, spritz them with some water to simulate morning dew. They will stay fragrant through the day",
         type: "Outdoor Gardening"
     },
     {
