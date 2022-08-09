@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 //     res.render('specific-forum', {layout: 'main'});
 // });
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
 
     try {
       const postData = await Post.findAll({
@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
       })
   
       const post = postData.map((post) => post.get({ plain: true }))
-      console.log(post);
       res.render('specific-forum', { layout: 'main' , post })
     } catch (err) {
       res.status(500).json(err)
