@@ -77,37 +77,19 @@ img {
 
 }
 
-/*///////////////////LOGIN MODAL//*/
 .modal {
-    width: 415px;
+    width: 30%;
     position: fixed;
     left: 500px;
 }
 
 .modal-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.modal-header h2 {
-    padding-left: 150px;
-}
-
-.modal-header button {
-    float: right;
+    background-color: var(--standout);
 }
 
 .mcustom {
-    /* color:white; */
-    padding: 5%;
-    opacity: 1;
-    background: radial-gradient(848px at 10% 20%, rgba(174, 231, 165, 0.9) 0%, rgb(181, 205, 154) 90%);
-}
-
-.opacity-2 {
-    opacity: 0.90 !important;
-    background: radial-gradient(848px at 10% 20%, rgba(174, 231, 165, 0.9) 0%, rgb(181, 205, 154) 90%);
+    padding: 10%;
+    background-color: var(--light);
 }
 
 
@@ -215,6 +197,7 @@ footer ul li {
 }
 
 .home-page-body .nav {
+    height: fit-content;
     display: flex;
     justify-content: center;
 }
@@ -232,7 +215,7 @@ footer ul li {
 }
 
 .hero-content {
-    margin: 180px 0 75px 0;
+    margin: 225px 0 75px 0;
     z-index: 2;
 }
 
@@ -253,6 +236,10 @@ footer ul li {
     width: 125px;
     padding: 10px 0;
     font-size: 1.3rem;
+}
+
+.welcome-hero .custom-btn { 
+    margin-right: 20px;
 }
 
 .teaser {
@@ -313,6 +300,7 @@ footer ul li {
 /*  LOGIN  */
 .login-forms {
     display: flex;
+    justify-content: center;
 }
 
 /* div around the two forms */
@@ -334,8 +322,7 @@ footer ul li {
 .form-group {
     margin-bottom: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .form-group label {
