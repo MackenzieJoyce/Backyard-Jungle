@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth')
 
 
 ///THIS IS GETTING THE POSTS
-router.get('/', withAuth, async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
   try {
     // Get all comments and JOIN with user data
     const postData = await Post.findAll({
@@ -189,7 +189,7 @@ router.get('/', withAuth, withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Comment }, { model: Collection }]
+      include: [{ model: Comment, Collection }]
     })
 
     const user = userData.get({ plain: true })

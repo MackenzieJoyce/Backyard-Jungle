@@ -6,10 +6,10 @@ const Category = require('./category');
 const Collection = require('./collection');
 
 
-Post.belongsTo(User, {
-  foreignKey: 'userId',
-  onDelete: 'CASCADE'
-})
+// Post.belongsTo(User, {
+//   foreignKey: 'userId',
+//   onDelete: 'CASCADE'
+// })
 
 Post.hasMany(Comment, {
   foreignKey: 'postId',
@@ -25,6 +25,14 @@ Comment.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE'
 })
+
+Category.hasMany(Post, {
+  foreignKey: 'category_id',
+});
+
+Post.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
 
 Collection.belongsTo(User, {
   foreignKey: 'id',
