@@ -16,10 +16,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // category: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false,
-    // },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   }, 
   {
     sequelize,

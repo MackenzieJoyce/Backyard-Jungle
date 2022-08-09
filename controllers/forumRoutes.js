@@ -7,59 +7,41 @@ const withAuth = require('../utils/auth');
 // });
 
 router.get('/', async (req, res) => {
-  console.log("FORUM ROUTES TEST!")
-  try {
-    // Get all comments and JOIN with user data
-    const postData = await Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['user_name']
-        },
-      ]
-    })
 
-    const categoryData = await Category.findAll()
+    try {
+      const postData = await Post.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['user_name']
+          }
+        ]
+      })
   
-    // Serialize data so the template can read it
-    const post = postData.map((post) => post.get({ plain: true }))
-    console.log(post);
-    const categories = categoryData.map((category) => category.get({ plain: true }))
-    console.log(categories);
-    // Pass serialized data and session flag into template
-    res.render('specific-forum', { layout: 'main', post, categories })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-}) 
-
-  // const categoryData = await Category.findAll().catch((err) => { 
-  //   res.json(err);
-  // });
-  //   const categories = categoryData.map((category) => category.get({ plain: true }));
-  //   res.render('specific-forum', { layout: 'main', categories });
-  // });
-  
-
-// })
-  
-
-// router.get('/', async (req, res) => {
-
-
+      const post = postData.map((post) => post.get({ plain: true }))
+      console.log(post);
+      res.render('specific-forum', { layout: 'main' , post })
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  });
 
 //  //or like this?
-//   router.post('/', withAuth, async (req, res) => {
-//     try {
-//       const newPost = await Post.create({
-//         ...req.body,
-//         id: req.session.id,
-//       });
+  router.post('/', async (req, res) => {
+    console.log("FORUM POST ROUTES TEST!")
+    console.log (req.body)
+
+    try {
+      const newPost = await Post.create({
+        title: req.body.title,
+        body: req.body.body,
+        type: req.body.type
+      });
   
-//       res.status(200).json(newPost);
-//     } catch (err) {
-//       res.status(400).json(err);
-//     }
-//   });
+      res.status(200).json(newPost);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
 
   module.exports = router;
