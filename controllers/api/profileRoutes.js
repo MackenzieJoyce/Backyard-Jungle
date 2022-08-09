@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
   console.log("session ID");
   console.log(req.session.user_id)
   try {
+    // Get all comments and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -17,14 +18,13 @@ router.get('/', async (req, res) => {
           }
         }
       ]
-
     })
-
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     })
 
     const user = userData.get({ plain: true })
+
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
 
