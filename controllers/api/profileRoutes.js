@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth')
 
 
 ///THIS IS GETTING THE POSTS
-router.get('/post', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all comments and JOIN with user data
     const postData = await Post.findAll({
