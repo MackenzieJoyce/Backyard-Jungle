@@ -1,10 +1,28 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
-// router.get('/forum', async (req, res) => {
-//     res.render('specific-forum', {layout: 'main'});
-// });
+router.get('/:id', async (req, res) => {
+  try {
+    const dbCategoryData = await Category.findByPk(req.params.id, {
+      include: [
+        {
+          model: Post,
+          attributes: [
+            'title',
+            'body'
+          ],
+        },
+      ],
+    });
+
+    const category = dbCategoryData.get({ plain: true });
+    res.render('specific-forum', {layout: 'main', category});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 router.get('/', async (req, res) => {
     console.log("FORUM ROUTES TEST!")
