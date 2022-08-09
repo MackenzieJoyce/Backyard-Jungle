@@ -37,7 +37,7 @@ const searchEID = '41f8fc9ff288c4c86';
 
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
-    console.log([plants[0].Common_Name])
+    // console.log([plants[0].Common_Name])
 
     console.log(plants);
 
@@ -49,7 +49,6 @@ const searchEID = '41f8fc9ff288c4c86';
         yandex_domain: "yandex.ru"
       };
       
-
       const callback = function(data) {
         console.log("API was called because plant has no image")
         plants[0]['img_url'] = data["images_results"][0].thumbnail;
