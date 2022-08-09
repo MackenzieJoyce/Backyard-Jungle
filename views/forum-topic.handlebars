@@ -1,0 +1,19 @@
+<div class="main-topic-card post-card">
+    <div class="main-topic-body card-body">
+        <div class="main-topic-top post-top">
+            <h5 class="main-topic-title card-title">{{title}}</h5>
+        </div>
+        <p class="main-topic-text card-text">{{body}}</p>
+        <h6 class="main-topic-subtitle card-subtitle">- {{user.user_name}}</h6>
+    </div>
+</div>
+
+{{#each comments as |comment|}}
+    {{post-box}}
+{{/each}}
+
+<br>
+<h5>Add to the conversation</h5>
+<div class="add-post">
+    <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">+</button>
+</div>
