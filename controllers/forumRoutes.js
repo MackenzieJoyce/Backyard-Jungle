@@ -17,9 +17,10 @@ router.get('/:id', async (req, res) => {
           }
         ]
       })
-  
+      const categoryData = await Category.findAll()
+      const categories = categoryData.map((post) => post.get({ plain: true }))
       const post = postData.map((post) => post.get({ plain: true }))
-      res.render('specific-forum', { layout: 'main' , post })
+      res.render('specific-forum', { layout: 'main' , post, categories })
     } catch (err) {
       res.status(500).json(err)
     }
