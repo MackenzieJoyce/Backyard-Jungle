@@ -30,7 +30,6 @@ router.get('/', async (req, res) => {
     })
     // Serialize data so the template can read it
     const collection = collectionData.map((collection) => collection.get({ plain: true }));
-    const post = postData.map((post) => post.get({ plain: true }));
     // console.log(collection[0])
     console.log(collection[0].plants.Scientific_Name)
   
