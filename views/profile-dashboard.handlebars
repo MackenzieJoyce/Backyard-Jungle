@@ -5,9 +5,31 @@
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
-        {{> weather-tile}}
-        {{> tips-tile}}
-    </aside>
+
+        <section class="widgets">
+            <div class="weather">
+                <div class="widget-top">
+                    <h3>Local Weather</h3>
+                </div>
+                <img class="icon" src="" id="icon">
+                <h3 id="city">Weather in</h3>
+                <p id="weather"></p>
+                <p class="temp"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+            </div>
+        </section>        
+       
+        <section class="widgets">
+            <div class="tips">
+                <div class="widget-top">
+                    <h3>Tips</h3>
+                </div>
+                <p id="tips"></p>
+            </div>
+        </section>    
+
+</aside>
 
     <section class="profile-details">
         <div>
@@ -25,6 +47,7 @@
                 </form>
             </div>
 
+
             <h3>My Posts</h3>
             {{#each post as |post|}}
             {{> post-box}}
@@ -32,9 +55,7 @@
 
 
         </div>
-        <div class="input-group">
 
-        </div>
     </section>
 
 </div>
