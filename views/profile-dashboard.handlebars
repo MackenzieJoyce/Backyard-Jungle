@@ -1,7 +1,7 @@
 <div class="profile-dashboard">
     <aside class="profile-info">
         <figure>
-            <img class="profile-info-img"src="/img/chika.jpg" alt="">
+            <img class="profile-info-img" src="/img/chika.jpg" alt="">
             <!-- INSERT PROFILE IMAGE -->
         </figure>
         <h3>{{user_name}}</h3>
@@ -11,22 +11,23 @@
 
     <section class="profile-details">
         <div>
-           <h3>My Garden</h3>
+            <h3>My Garden</h3>
             <div class="wraper">
-            {{#each plants as |plant|}}
+                {{#each plants as |plant|}}
                 {{> profile-garden-tiles}}
-            {{/each}}
+                {{/each}}
             </div>
-            <div class="input-group">
+            <div class="input-group searchf">
                 <form id="plantSearch">
-                    <input type="text" id="pSearch" class="form-control" placeholder="Looking for something?"
+                    <input type="text" id="pSearch" class="form-control psearchb" placeholder="Looking for something?"
                         aria-label="Looking for something?" name="plant" aria-describedby="basic-addon2">
-                    <input class="btn primary-btn" type="submit" value="Search">
+                    <input class="btn primary-btn psearchb" type="submit" value="Search">
+                </form>
             </div>
 
             <h3>My Posts</h3>
             {{#each post as |post|}}
-                {{> post-box}}
+            {{> post-box}}
             {{/each}}
 
 
