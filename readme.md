@@ -6,6 +6,7 @@ Welcome to the GitHub page for Backyard Jungle, the site for all plant lovers!
 
 ![image](./public/img/Homepage%20Screenshot.png)
 ![image](./public/img/Forum%20Screenshot.png)
+![image](./public/img/Profile%20Screenshot.png)
 
 
 ## Built with:
