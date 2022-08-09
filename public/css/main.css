@@ -197,6 +197,7 @@ footer ul li {
 }
 
 .home-page-body .nav {
+    height: fit-content;
     display: flex;
     justify-content: center;
 }
@@ -214,7 +215,7 @@ footer ul li {
 }
 
 .hero-content {
-    margin: 180px 0 75px 0;
+    margin: 225px 0 75px 0;
     z-index: 2;
 }
 
