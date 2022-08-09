@@ -4,9 +4,7 @@ const withAuth = require('../../utils/auth')
 
 
 ///THIS IS GETTING THE POSTS
-router.get('/', async (req, res) => {
-  console.log("request TEST")
-  // console.log(req)
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all comments and JOIN with user data
     const postData = await Post.findAll({
@@ -62,7 +60,7 @@ router.get('/', async (req, res,) => {
 
 })
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -88,6 +86,7 @@ router.get('/post/:id', async (req, res) => {
 
 /////THIS IS GETTING THE COMMENTS
 
+
 // router.get('/', async (req, res) => {
 //   try {
 //     // Get all comments and JOIN with user data
@@ -100,6 +99,7 @@ router.get('/post/:id', async (req, res) => {
 //       ]
 //     })
 
+
 //     // Serialize data so the template can read it
 //     const comment = commentData.map((comment) => comment.get({ plain: true }))
 
@@ -110,7 +110,7 @@ router.get('/post/:id', async (req, res) => {
 //   }
 // })
 
-router.get('/comment/:id', async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
@@ -134,7 +134,7 @@ router.get('/comment/:id', async (req, res) => {
 
 //THIS IS GETTING THE COLLECTION INFO
 
-router.get('/collection', async (req, res) => {
+router.get('/collection', withAuth, async (req, res) => {
   try {
     // Get all collections and JOIN with user data
     const collectionData = await Collection.findAll({
@@ -161,7 +161,7 @@ router.get('/collection', async (req, res) => {
   }
 })
 
-router.get('/collection/:id', async (req, res) => {
+router.get('/collection/:id', withAuth, async (req, res) => {
   try {
     const collectionData = await Collection.findByPk(req.params.id, {
       include: [
@@ -184,7 +184,7 @@ router.get('/collection/:id', async (req, res) => {
 })
 
 // Use withAuth middleware to prevent access to route
-router.get('/', withAuth, async (req, res) => {
+router.get('/', withAuth, withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -213,7 +213,7 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id)
     if (!userData) {
