@@ -538,3 +538,11 @@ footer ul li {
 .specific-forum-post h3 { 
     margin: 10px 0;
 }
+
+.add-post { 
+    background-color: var(--dark);
+    color: var(--offWhite);
+    font-weight: 800;
+    border-radius: 50px;
+    border: 1px solid var(--light);
+}
