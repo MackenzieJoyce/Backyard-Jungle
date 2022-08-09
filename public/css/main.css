@@ -127,7 +127,7 @@ img {
 
 /*  EVERYPAGE  */
 header { 
-    width: 100%;
+    margin-bottom: 30px;
     margin-bottom: 30px;
     padding: 0 10px;
     background-color: var(--middle);
@@ -180,6 +180,7 @@ header {
 footer {
     height: 50px;
     width: 100%;
+    margin-top: 30px;
     padding: 10px 0;
     background-color: var(--middle);
     text-align: center;
@@ -523,6 +524,7 @@ footer ul li {
 }
 
 .specific-category-list {
+    width: 20%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -531,6 +533,7 @@ footer ul li {
 .specific-category-list h3 { 
     padding: 10px;
     margin: 0;
+    font-weight: 600;
     background-color: var(--standout);
     border-top-right-radius: 10px;
 }
@@ -552,7 +555,7 @@ footer ul li {
 .specific-forum-post { 
     display: flex;
     flex-direction: column;
-    margin: 0 60px 30px 60px;
+    padding: 0 30px;
 }
 
 .specific-forum-post h3 { 
@@ -562,6 +565,7 @@ footer ul li {
 .add-post button { 
     width: 4rem;
     height: 4rem;
+    margin-right: 30px;
     background-color: var(--standout);
     color: var(--offWhite);
     font-size: 2.5rem;

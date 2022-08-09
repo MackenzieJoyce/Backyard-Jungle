@@ -1,4 +1,21 @@
-<div class="add-post">
+<div class="specific-forum-content">
+  
+  <div class="specific-category-list">
+    <aside class="list-group">
+      <h3>Communities</h3>
+      {{#each categories as |category|}}
+        {{> category-list}}
+      {{/each}}
+    </aside>
+  </div>
+
+  <div class="specific-forum-post">
+    {{#each post as |post|}}
+      {{>post-box}}
+    {{/each}}
+  </div>
+
+  <div class="add-post">
   <button data-toggle="modal" data-target="#project-modal">+</button>
 </div>
 
@@ -9,7 +26,6 @@
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="project-modal-form">+</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -46,24 +62,6 @@
 </div>
 
 {{!-- END OF MODAL --}}
-
-
-<div class="specific-forum-content">
-  
-  <div class="specific-category-list">
-    <aside class="list-group">
-      <h3>Communities</h3>
-      {{#each categories as |category|}}
-        {{> category-list}}
-      {{/each}}
-    </aside>
-  </div>
-
-  <div class="specific-forum-post">
-    {{#each post as |post|}}
-      {{>post-box}}
-    {{/each}}
-  </div>
 
 </div> 
 
