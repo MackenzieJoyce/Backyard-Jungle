@@ -126,7 +126,7 @@ img {
 }
 
 /*  EVERYPAGE  */
-header { 
+.main-header { 
     margin-bottom: 30px;
     margin-bottom: 30px;
     padding: 0 10px;
@@ -136,6 +136,7 @@ header {
 }
 
 .nav {
+    background-color: var(--middle);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
