@@ -21,16 +21,7 @@ Collection.init(
       allowNull: false
     }
   },
-  //   {
-  //     sequelize,
-  //     timestamps: false,
-  //     freezeTableName: true,
-  //     timestamps: true,
-  //     underscored: true,
-  //     modelName: 'collection'
-  //   }
-  // )
-  // Saw the sequelize below as an incoming change, but not sure if this is the one that works...
+
   {
     sequelize,
     freezeTableName: true,
