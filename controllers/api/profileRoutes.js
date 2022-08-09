@@ -5,6 +5,8 @@ const withAuth = require('../../utils/auth')
 
 ///THIS IS GETTING THE POSTS
 router.get('/', async (req, res) => {
+  console.log("request TEST")
+  // console.log(req)
   try {
     // Get all comments and JOIN with user data
     const postData = await Post.findAll({
@@ -18,12 +20,9 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
-    // console.log(post);
-    // console.log(post[0].user.user_name);
-    // console.log(post.user.user_name);
 
     // Pass serialized data and session flag into template
-    res.render('profile-dashboard', { layout: 'main' , post })
+    res.render('profile-dashboard', { layout: 'main', post })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -32,36 +31,36 @@ router.get('/', async (req, res) => {
 
 })
 
-// router.get('/', async (req, res,) => {
-//   try {
-//     // Get all comments and JOIN with user data
-//     const collectionData = await Collection.findAll({
-//       // include: [
-//       //   {
-//       //     model: User,
-//       //     attributes: ['user_name']
-//       //   },
-//       //   {
-//       //     model: Plants,
-//       //     attributes: ['id']
-//       //   },
-//       // ]
-//     })
+router.get('/', async (req, res,) => {
+  try {
+    // Get all comments and JOIN with user data
+    const collectionData = await Collection.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ['user_name']
+      //   },
+      //   {
+      //     model: Plants,
+      //     attributes: ['id']
+      //   },
+      // ]
+    })
 
-//     // Serialize data so the template can read it
-//     const collection = collectionData.map((post) => post.get({ plain: true }))
-//     // console.log(post);
-//     // console.log(post[0].user.user_name);
-//     // console.log(post.user.user_name);
-//     console.log(collection);
-//     // Pass serialized data and session flag into template
-//     res.render('profile-dashboard', { layout: 'main' , collection })
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-  
+    // Serialize data so the template can read it
+    const collection = collectionData.map((post) => post.get({ plain: true }))
+    // console.log(post);
+    // console.log(post[0].user.user_name);
+    // console.log(post.user.user_name);
+    console.log(collection);
+    // Pass serialized data and session flag into template
+    res.render('profile-dashboard', { layout: 'main' , collection })
+  } catch (err) {
+    res.status(500).json(err)
+  }
 
-// })
+
+})
 
 router.get('/post/:id', async (req, res) => {
   try {
@@ -89,27 +88,27 @@ router.get('/post/:id', async (req, res) => {
 
 /////THIS IS GETTING THE COMMENTS
 
-router.get('/', async (req, res) => {
-  try {
-    // Get all comments and JOIN with user data
-    const commentData = await Comment.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['user_name']
-        }
-      ]
-    })
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all comments and JOIN with user data
+//     const commentData = await Comment.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['user_name']
+//         }
+//       ]
+//     })
 
-    // Serialize data so the template can read it
-    const comment = commentData.map((comment) => comment.get({ plain: true }))
+//     // Serialize data so the template can read it
+//     const comment = commentData.map((comment) => comment.get({ plain: true }))
 
-    // Pass serialized data and session flag into template
-    res.render('profile-dashboard', { layout: 'main' })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+//     // Pass serialized data and session flag into template
+//     res.render('profile-dashboard', { layout: 'main' })
+//   } catch (err) {
+//     res.status(500).json(err)
+//   }
+// })
 
 router.get('/comment/:id', async (req, res) => {
   try {
