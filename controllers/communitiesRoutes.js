@@ -4,10 +4,9 @@ const { Plants, Category } = require('../models');
 router.get('/', async (req, res) => {
     console.log('communities route TEST!');
 
-    const categoryData = await Category.findAll().catch((err) => { 
-        res.json(err);
-      });
+    const categoryData = await Category.findAll();
         const categories = categoryData.map((category) => category.get({ plain: true }));
+        console.log(categories)
         res.render('communities', { layout: 'main', categories });
       });
 

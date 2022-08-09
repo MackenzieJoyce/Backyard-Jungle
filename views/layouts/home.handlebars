@@ -21,21 +21,22 @@
 
             <div class="home-page-body">
                 <ul class="nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="/communities/">Communities</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about/">About</a>
-                </li>
-                   <li class="nav-item">
-                  <a class="nav-link" href="/contact/">Contact</a>
-                </li>
-                {{!-- <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Button</button>
-                    </div>
-                </div> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/communities/">Communities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    </li>
+                    {{!-- <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                            aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Button</button>
+                        </div>
+                    </div> --}}
                 </ul>
 
                 <header>
@@ -49,132 +50,41 @@
                             <p>We're here to give you the space you need to nerd out on all things green</p>
 
                             <div class="button-box">
-                            
+
                                 <!-- These buttons trigger the modal -->
-                                <button class="btn custom-btn" data-toggle="modal"
-                                    data-target="#signup-modal">
+                                <button class="btn custom-btn" data-toggle="modal" data-target="#signup-modal">
                                     Sign Up
                                 </button>
-                                <button class="btn custom-btn" data-toggle="modal"
-                                    data-target="#login-modal">
+                                <button class="btn custom-btn" data-toggle="modal" data-target="#login-modal">
                                     Login
                                 </button>
                             </div>
                         </div>
                     </div>
-
-                    <div class="modal fade custom-modal" id="login-modal" tabindex="-1" role="dialog"
-                        aria-labelledby="project-modal-form" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content opacity-2">
-                                <div class="modal-header">
-                                    <h2 class="page-title">Login</h2>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="mcustom">
-                                    <div class="login-forms row justify-space-between-md">
-                                        <div class="login-card">
-                                            <form class="form login-form">
-                                                <div class="form-group">
-                                                    <label for="email-login">Email</label>
-                                                    <input class="form-input" type="text" id="email-login" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="password-login">Password</label>
-                                                    <input class="form-input" type="password" id="password-login" />
-                                                </div>
-                                                <div class="form-group-btn">
-                                                    <button class="btn btn-primary loginBtn"
-                                                        type="submit">Login</button>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="modal fade custom-modal" id="signup-modal" tabindex="-1" role="dialog"
-                        aria-labelledby="project-modal-form" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content opacity-2">
-                                <div class="modal-header">
-                                    <h2 class="page-title">SignUp</h2>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="mcustom">
-                                        <div class="login-forms row justify-space-between-md">
-                                            <div class="login-card">
-                                                
-                                                <form class="form signup-form">
-                                                    <div class="form-group">
-                                                        <label for="username-signup">Username</label>
-                                                        <input class="form-input" type="text" id="username-signup" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="email-signup">Email</label>
-                                                        <input class="form-input" type="text" id="email-signup" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="password-signup">Password</label>
-                                                        <input class="form-input" type="password"
-                                                            id="password-signup" />
-                                                    </div>
-                                                    <div class="form-group-btn">
-                                                        <button class="btn btn-primary" type="submit">SignUp</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </header>
-
+                {{{body}}}
                 <div class="teaser">
-                    <a href="/api/plant/"><div class="teaser-card plant-id-teaser">
-                        <img src="/img/dracula-simia.jpg" alt="">
-                        <h3>Identify Plants You Find Along The Way</h3>
-                    </div></a>
-                    <a href="/communities/"><div class="teaser-card group-teaser">
-                        <img src="/img/community_gardens.jpg" alt="">
-                        <h3>Talk to Other Plant People In Our Forums</h3>
-                    </div></a>
-                     <div data-toggle="modal"
-                        data-target="#login-modal" class="teaser-card widget-teaser">
+                    <a href="/api/plant/">
+                        <div class="teaser-card plant-id-teaser">
+                            <img src="/img/dracula-simia.jpg" alt="">
+                            <h3>Identify Plants You Find Along The Way</h3>
+                        </div>
+                    </a>
+                    <a href="/communities/">
+                        <div class="teaser-card group-teaser">
+                            <img src="/img/community_gardens.jpg" alt="">
+                            <h3>Talk to Other Plant People In Our Forums</h3>
+                        </div>
+                    </a>
+                    <div data-toggle="modal" data-target="#login-modal" class="teaser-card widget-teaser">
                         <img src="/img/weather.jpg" alt="">
                         <h3>Go The Extra Mile With Our Widgets</h3></button>
                     </div>
                 </div>
 
                 <div class="github">
-                    <h2>Our app changes like the seasons... Follow the creators on <a href="https://github.com/Anastasia095/Backyard-Jungle">Github</a> for updates!</h2>
+                    <h2>Our app changes like the seasons... Follow the creators on <a
+                            href="https://github.com/Anastasia095/Backyard-Jungle">Github</a> for updates!</h2>
                 </div>
             </div>
         </div>
