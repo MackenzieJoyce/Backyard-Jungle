@@ -28,8 +28,6 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
 
-    console.log(post);
-
     const collectionData = await Collection.findAll({
       // where: user_id = req.session.user_id,
       include: [
@@ -37,27 +35,18 @@ router.get('/', async (req, res) => {
           model: Plants,
         }
       ]
-    }
-    )
-
+    });
+    
     // Serialize data so the template can read it
     const collection = collectionData.map((collection) => collection.get({ plain: true }));
 
     let cplants = [];
-    console.log("TESTING BELOW");
-
-    console.log(collection[0].plants);
     let uID = req.session.user_id;
-    console.log('USER ID TEST============>', uID)
-    console.log('USER ID TEST============> '+ uID)
-    console.log(collection[0].user_id)
     for (var i = 0; i < collection.length; i++) {
       if(collection[i].user_id == uID){
         cplants[i] = collection[i].plants[0];
       }
     }
-    console.log(collection);
-    console.log(cplants);
     if (cplants.length == 0){
       res.render('profile-dashboard', { layout: 'main', post, ...user });
     } else {
@@ -65,7 +54,6 @@ router.get('/', async (req, res) => {
     }
 
   } catch (err) {
-    console.log("TTTTTTTEST")
     res.status(500).json(err)
   }
 })
@@ -142,56 +130,6 @@ router.get('/comment/:id', async (req, res) => {
   }
 })
 
-//THIS IS GETTING THE COLLECTION INFO
-
-router.get('/collection', async (req, res) => {
-  try {
-    // Get all collections and JOIN with user data
-    const collectionData = await Collection.findAll({
-      include: [
-        {
-          model: Collection,
-          attributes: ['user_name']
-        }
-      ]
-    })
-
-    // Serialize data so the template can read it
-    const collection = collectionData.map((collection) =>
-      collection.get({ plain: true })
-    )
-
-    // Pass serialized data and session flag into template
-    res.render('account-dashbaord', {
-      collection,
-      logged_in: req.session.logged_in
-    })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-router.get('/collection/:id', async (req, res) => {
-  try {
-    const collectionData = await Collection.findByPk(req.params.id, {
-      include: [
-        {
-          model: Collection,
-          attributes: ['PLACEHOLDER']
-        }
-      ]
-    })
-
-    const collection = collectionData.get({ plain: true })
-
-    res.render('collection', {
-      ...collection,
-      logged_in: req.session.logged_in
-    })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
