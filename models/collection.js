@@ -18,7 +18,11 @@ Collection.init(
     },
     plant_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: 'plants',
+        key: 'id'
+      }
     }
   },
 

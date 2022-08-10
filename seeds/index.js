@@ -7,13 +7,10 @@ const categorySeeds = require('./categorySeeds');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedPlants();
-
-  await seedPost();
-
+  // await seedPlants();
   await seedUser();
-
   await categorySeeds();
+  await seedPost();
 
   process.exit(0);
 };

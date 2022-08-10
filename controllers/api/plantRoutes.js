@@ -32,7 +32,7 @@ const searchEID = '41f8fc9ff288c4c86';
 
             ]
         },
-        limit: 8
+        limit: 15
     });
 
     // Serialize data so the template can read it
