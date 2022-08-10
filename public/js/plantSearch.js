@@ -20,7 +20,7 @@ const searchFormHandler = async (event) => {
     if (response.ok) {
         document.location.replace('/api/searchplant?plant=' + qJoined);
     } else {
-        console.log("Sadly this API doesn't work...")
+        alert("Sadly we don't have this plant in our database...");
     }
 
 };

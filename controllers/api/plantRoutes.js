@@ -12,27 +12,28 @@ const searchEID = '41f8fc9ff288c4c86';
 
 //figure out in what format to pass in data and test if teh query actually works, also need || && separate properties one of the names might not match the search string
 // router.get('/', withAuth, async (req, res) => {
-  router.get('/', async (req, res) => {
-    console.log("REQUEST QUERY TEST: " + req.query)
-    console.log(req.query)
-    console.log(req.query.plant)
+router.get('/', async (req, res) => {
+  console.log("REQUEST QUERY TEST: " + req.query)
+  console.log(req.query)
+  console.log(req.query.plant)
+  try {
     const plantData = await Plants.findAll({
-        where: {
-            [Op.or]: [{
-                Scientific_Name: {
-                    [Op.like]: `%${req.query.plant}`
-                }
-            },
-
-            {
-                Common_Name: {
-                    [Op.like]: `%${req.query.plant}`
-                }
-            }
-
-            ]
+      where: {
+        [Op.or]: [{
+          Scientific_Name: {
+            [Op.like]: `%${req.query.plant}`
+          }
         },
-        limit: 15
+
+        {
+          Common_Name: {
+            [Op.like]: `%${req.query.plant}`
+          }
+        }
+
+        ]
+      },
+      limit: 15
     });
 
     // Serialize data so the template can read it
@@ -41,50 +42,55 @@ const searchEID = '41f8fc9ff288c4c86';
 
     console.log(plants);
 
+    if (plants.length == 0) {
 
-    if (plants[0].img_url == null){
-    const params = {
+    }
+    if (plants[0].img_url == null) {
+      const params = {
         engine: "yandex_images",
         text: plants[0].Common_Name,
         yandex_domain: "yandex.ru"
       };
-      
-      const callback = function(data) {
+
+      const callback = function (data) {
         console.log("API was called because plant has no image")
         plants[0]['img_url'] = data["images_results"][0].thumbnail;
         console.log(plants[0].img_url);
         Plants.update(
-            { img_url: data["images_results"][0].thumbnail },
-            { where: { id: plants[0].id } }
-          )
+          { img_url: data["images_results"][0].thumbnail },
+          { where: { id: plants[0].id } }
+        )
         res.render('profile-dashboard', { layout: 'main', plants });
       };
-      
+
       // Show result as JSON
       search.json(params, callback);
     }
-    else{
-        res.render('profile-dashboard', { layout: 'main', plants });
+    else {
+      res.render('profile-dashboard', { layout: 'main', plants });
     }
-
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
+
 router.post('/add', async (req, res) => {
-// router.post('/add', withAuth, async (req, res) => {
-    console.log("request received!")
-    console.log(req.body.plant_id)
-    console.log("log session below")
-    console.log(req.session)
-    console.log(req.session.user_id)
-    try {
-        const collectionAdd = await Collection.create({
-          plant_id: req.body.plant_id,
-          user_id: req.session.user_id,
-        });
-    
-        res.status(200).json(collectionAdd);
-      } catch (err) {
-        res.status(400).json(err);
-      }
-  });
+  // router.post('/add', withAuth, async (req, res) => {
+  console.log("request received!")
+  console.log(req.body.plant_id)
+  console.log("log session below")
+  console.log(req.session)
+  console.log(req.session.user_id)
+  try {
+    const collectionAdd = await Collection.create({
+      plant_id: req.body.plant_id,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(collectionAdd);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
