@@ -11,7 +11,8 @@ const searchFormHandler = async (event) => {
 
 
     // Send a GET request to the API endpoint
-    const response = await fetch('http://localhost:3001/api/searchplant?plant='
+    // const response = await fetch('http://localhost:3001/api/searchplant?plant='
+    const response = await fetch('/api/searchplant?plant='
         + qJoined, {
         headers: { 'Content-Type': 'application/json' }
     });
@@ -65,7 +66,8 @@ const addBtnHandler = async (event) => {
     const plant_id = document.getElementById('sciname').textContent.trim();
 
     // Send a POST request to the API endpoint
-    const response = await fetch('http://localhost:3001/api/searchplant/add', {
+    // const response = await fetch('http://localhost:3001/api/searchplant/add', {
+        const response = await fetch('/api/searchplant/add', {
         method: 'POST',
         body: JSON.stringify({ plant_id }),
         headers: { 'Content-Type': 'application/json' },
