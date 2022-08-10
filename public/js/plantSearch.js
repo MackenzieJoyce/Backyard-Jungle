@@ -81,5 +81,5 @@ const addBtnHandler = async (event) => {
 };
 
 document
-    .getElementById('addPlant')
+    .querySelector('.collection-add')
     .addEventListener('click', addBtnHandler);
