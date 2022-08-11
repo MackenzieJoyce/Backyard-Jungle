@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
   console.log("FORUM POST ROUTES TEST!")
   // console.log (req.body)
   console.log(req.session.user_i);
+  console.log(req.body);
   try {
     const newPost = await Post.create({
       title: req.body.title,
@@ -27,7 +28,6 @@ router.post('/', async (req, res) => {
 // });
 
 router.get('/:id', async (req, res) => {
-
     try {
       const postData = await Post.findAll({
         include: [
