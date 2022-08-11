@@ -26,15 +26,21 @@ Comment.belongsTo(User, {
   onDelete: 'CASCADE'
 })
 
-Plants.belongsTo(Collection, {
-  foreignKey: 'id',
-  onDelete: 'CASCADE'
-})
+// Plants.belongsTo(Collection, {
+//   foreignKey: 'id',
+//   onDelete: 'CASCADE'
+// })
 
-Collection.hasMany(Plants, {
-  foreignKey: 'id',
+// Collection.hasMany(Plants, {
+//   foreignKey: 'id',
+//   onDelete: 'CASCADE'
+// })
+
+Plants.hasMany(Collection, {
+  foreignKey: 'plant_id',
   onDelete: 'CASCADE'
 })
+Collection.belongsTo(Plants)
 
 module.exports = {
   Plants,

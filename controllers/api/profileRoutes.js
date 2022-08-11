@@ -39,14 +39,15 @@ router.get('/', async (req, res) => {
     
     // Serialize data so the template can read it
     const collection = collectionData.map((collection) => collection.get({ plain: true }));
-
+    // console.log(collection);
     let cplants = [];
     let uID = req.session.user_id;
     for (var i = 0; i < collection.length; i++) {
       if(collection[i].user_id == uID){
-        cplants[i] = collection[i].plants[0];
+        cplants[i] = collection[i].plant;
       }
     }
+
     if (cplants.length == 0){
       res.render('profile-dashboard', { layout: 'main', post, ...user });
     } else {

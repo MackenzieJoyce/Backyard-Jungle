@@ -35,44 +35,44 @@ router.get('/', async (req, res) => {
       },
       limit: 15
     });
-
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
     // console.log([plants[0].Common_Name])
-
     console.log(plants);
-
+    console.log("=============================================plants.length")
+    console.log(plants.length)
     if (plants.length == 0) {
+      res.status(400).json(err);
+    } 
+    else if (plants[0].img_url == "") {
+      console.log("TEST API CALL=============================>>>>>>>>>")
+        const params = {
+          engine: "yandex_images",
+          text: plants[0].Common_Name,
+          yandex_domain: "yandex.ru"
+        };
 
-    }
-    if (plants[0].img_url == null) {
-      const params = {
-        engine: "yandex_images",
-        text: plants[0].Common_Name,
-        yandex_domain: "yandex.ru"
-      };
+        const callback = function (data) {
+          console.log("API was called because plant has no image")
+          plants[0]['img_url'] = data["images_results"][0].thumbnail;
+          console.log(plants[0].img_url);
+          Plants.update(
+            { img_url: data["images_results"][0].thumbnail },
+            { where: { id: plants[0].id } }
+          )
+          res.render('profile-dashboard', { layout: 'main', plants });
+        };
 
-      const callback = function (data) {
-        console.log("API was called because plant has no image")
-        plants[0]['img_url'] = data["images_results"][0].thumbnail;
-        console.log(plants[0].img_url);
-        Plants.update(
-          { img_url: data["images_results"][0].thumbnail },
-          { where: { id: plants[0].id } }
-        )
+        // Show result as JSON
+        search.json(params, callback);
+      }
+      else {
         res.render('profile-dashboard', { layout: 'main', plants });
-      };
-
-      // Show result as JSON
-      search.json(params, callback);
+      }
+    } catch (err) {
+      res.status(400).json(err);
     }
-    else {
-      res.render('profile-dashboard', { layout: 'main', plants });
-    }
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+  });
 
 router.post('/add', async (req, res) => {
   // router.post('/add', withAuth, async (req, res) => {

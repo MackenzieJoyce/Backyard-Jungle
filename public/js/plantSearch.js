@@ -20,7 +20,7 @@ const searchFormHandler = async (event) => {
     if (response.ok) {
         document.location.replace('/api/searchplant?plant=' + qJoined);
     } else {
-        alert("Sadly we don't have this plant in our database...");
+        alert("Sadly we don't have this plant in our database...")
     }
 
 };
@@ -34,7 +34,7 @@ document
 
 var weather = {
     APIKey: "d23ee897efa94295b3514040220808",
-    myURL: 'https://api.weatherapi.com/v1/current.json?key=',
+    myURL: 'http://api.weatherapi.com/v1/current.json?key=',
     fetchWeather: function () {
 
         fetch(this.myURL + this.APIKey + '&q=auto:ip')
@@ -59,29 +59,23 @@ var weather = {
 weather.fetchWeather();
 
 /************************************************************** */
-const addBtnHandler = async (event) => {
-    event.preventDefault();
-    console.log("Click Click Click!")
-    // Collect values from the login form
-    const plant_id = document.getElementById('sciname').textContent.trim();
 
-    // Send a POST request to the API endpoint
-    // const response = await fetch('http://localhost:3001/api/searchplant/add', {
+const plantID = document.querySelectorAll('.collection-add');
+
+plantID.forEach(response => {
+    response.addEventListener('click', async function myFunction(e) {
+        let plant_id = e.target.id;
         const response = await fetch('/api/searchplant/add', {
-        method: 'POST',
-        body: JSON.stringify({ plant_id }),
-        headers: { 'Content-Type': 'application/json' },
-
-    });
-
-    if (response.ok) {
-        document.location.replace('/api/profile');
-    } else {
-        console.log("Failed to add to collection...")
-    }
-
-};
-
-document
-    .querySelector('.collection-add')
-    .addEventListener('click', addBtnHandler);
+            method: 'POST',
+            body: JSON.stringify({ plant_id }),
+            headers: { 'Content-Type': 'application/json' },
+    
+        });
+    
+        if (response.ok) {
+            document.location.replace('/api/profile');
+        } else {
+            console.log("Failed to add to collection...")
+        }
+    })
+})
