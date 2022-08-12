@@ -47,6 +47,5 @@ router.get('/title', async (req, res) => {
 
 });
 
-//  //or like this?
 
 module.exports = router;

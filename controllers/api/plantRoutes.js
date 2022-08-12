@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 
         ]
       },
-      // limit: 15
+      limit: 15
     });
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
