@@ -16,6 +16,16 @@ Post.hasMany(Comment, {
   onDelete: 'CASCADE'
 })
 
+Post.belongsTo(Category, {
+  foreignKey: 'type',
+  onDelete: 'CASCADE'
+})
+
+Category.hasMany(Post, {
+  foreignKey: 'type',
+  onDelete: 'CASCADE'
+})
+
 Comment.belongsTo(Post, {
   foreignKey: 'postId',
   onDelete: 'CASCADE'
