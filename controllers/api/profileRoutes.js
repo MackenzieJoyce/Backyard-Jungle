@@ -82,56 +82,6 @@ router.get('/post/:id', async (req, res) => {
 })
 
 
-
-/////THIS IS GETTING THE COMMENTS
-
-
-// router.get('/', async (req, res) => {
-//   try {
-//     // Get all comments and JOIN with user data
-//     const commentData = await Comment.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['user_name']
-//         }
-//       ]
-//     })
-
-
-//     // Serialize data so the template can read it
-//     const comment = commentData.map((comment) => comment.get({ plain: true }))
-
-//     // Pass serialized data and session flag into template
-//     res.render('profile-dashboard', { layout: 'main' })
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-// })
-
-router.get('/comment/:id', async (req, res) => {
-  try {
-    const commentData = await Comment.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['user_name']
-        }
-      ]
-    })
-
-    const comment = commentData.get({ plain: true })
-
-    res.render('comment', {
-      ...comment,
-      logged_in: req.session.logged_in
-    })
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

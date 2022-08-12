@@ -34,7 +34,7 @@ document
 
 var weather = {
     APIKey: "d23ee897efa94295b3514040220808",
-    myURL: 'http://api.weatherapi.com/v1/current.json?key=',
+    myURL: 'https://api.weatherapi.com/v1/current.json?key=',
     fetchWeather: function () {
 
         fetch(this.myURL + this.APIKey + '&q=auto:ip')
