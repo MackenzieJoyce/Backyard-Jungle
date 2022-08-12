@@ -1,4 +1,3 @@
-console.log("HEY IM TEST!")
 async function signupFormHandler(event) {
     event.preventDefault();
     console.log("login JS file")
