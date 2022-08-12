@@ -6,10 +6,10 @@ const categorySeeds = require('./categorySeeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-
+  await categorySeeds();
   // await seedPlants();
   await seedUser();
-  await categorySeeds();
+ 
   await seedPost();
 
   process.exit(0);
