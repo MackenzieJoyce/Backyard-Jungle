@@ -2,11 +2,8 @@ const router = require('express').Router()
 const { Comment, User, Post, Collection, Plants } = require('../../models')
 const withAuth = require('../../utils/auth')
 
-
 ///THIS IS GETTING THE POSTS
-router.get('/', async (req, res) => {
-  console.log("session ID");
-  console.log(req.session.user_id)
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [
@@ -17,7 +14,6 @@ router.get('/', async (req, res) => {
           }
         }
       ]
-
     })
 
     const userData = await User.findByPk(req.session.user_id, {
@@ -27,37 +23,40 @@ router.get('/', async (req, res) => {
     const user = userData.get({ plain: true })
     // Serialize data so the template can read it
     const post = postData.map((post) => post.get({ plain: true }))
-
     const collectionData = await Collection.findAll({
-      // where: user_id = req.session.user_id,
+      where: user_id = req.session.user_id,
       include: [
         {
           model: Plants,
         }
       ]
     });
-    
+
     // Serialize data so the template can read it
     const collection = collectionData.map((collection) => collection.get({ plain: true }));
-    // console.log(collection);
     let cplants = [];
     let uID = req.session.user_id;
     for (var i = 0; i < collection.length; i++) {
-      if(collection[i].user_id == uID){
+      if (collection[i].user_id == uID) {
         cplants[i] = collection[i].plant;
       }
     }
 
-    if (cplants.length == 0){
+    if (cplants.length == 0) {
       res.render('profile-dashboard', { layout: 'main', post, ...user });
     } else {
-      res.render('profile-dashboard', { layout: 'main', post, ...user , cplants});
+      res.render('profile-dashboard', { layout: 'main', post, ...user, cplants });
     }
 
   } catch (err) {
     res.status(500).json(err)
   }
 })
+
+
+
+
+
 
 router.get('/post/:id', async (req, res) => {
   try {
