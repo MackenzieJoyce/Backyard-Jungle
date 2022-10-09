@@ -1,11 +1,12 @@
-<div class="categories-intro">
-    <h1>Find Your Community</h2>
-    <p style="font-size: 20px;">Join the latest conversations in the plant world. Get advice, help others, or just chat!</p>
-</div>
+<div>
+    <section class="page-intro">
+        <h2>Find Your Community</h2>
+        <p>Join the latest conversations in the plant world. Get advice, help others, or just chat!</p>
+    </section>
 
-<div class="category-collection">
-{{#each categories as |category|}}
-    {{> category-tiles}}
-{{/each}}
-
+    <section class="category-collection">
+        {{#each categories as |category|}}
+        {{> category-tiles}}
+        {{/each}}
+    </section>
 </div>
