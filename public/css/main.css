@@ -514,24 +514,26 @@ img {
 }
 
 .post-card {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    background-color: var(--offWhite);
-    border: 1px solid var(--dark-middle);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.post-card .post-top, 
-.post-card p { 
-    padding: 10px;
+    height: fit-content;
+    margin: 0 5% 3% 5%;
+    padding: 0 0 1% 1%;
+    color: var(--offWhite);
+    background-color: var(--dark-middle);
+    border-top: 1px solid var(--dark-middle);
+    border-left: 1px solid var(--dark-middle);
+    border-top-left-radius: 5px;
 }
 
 .post-top { 
-    background-color: var(--dark-middle);
-    color: var(--offWhite);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 1% 0;
+}
+
+.post-body { 
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    background-color: var(--offWhite);
+    color: var(--dark-middle);
 }
 
 
@@ -543,62 +545,66 @@ img {
     justify-content: space-between;
 }
 
-.specific-category-list h3 { 
-    padding: 10px;
+.category-aside { 
     margin: 0;
+    padding: .5% 1% 0 1.5%;
     font-weight: 600;
-    background-color: var(--standoutDark);
-    border-top-right-radius: 10px;
+} 
+
+.category-aside h3 { 
+    padding-bottom: 3%;
+    border-bottom: 2px solid var(--dark-middle);
+    color: var(--dark-middle); 
 }
 
-.list-group-item { 
-    width: 100%;
-    height: 70px;
+.category-aside .list-group-item { 
+    padding: 6% 2%;
+}
+
+.list-group-item a { 
     color: var(--dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.category-list a:hover {
+.list-group-item a:hover {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--standoutDark);
 }
 
 .specific-forum-post { 
     display: flex;
     flex-direction: column;
-    padding: 0 30px;
 }
 
 .specific-forum-post h3 { 
-    margin: 10px 0;
+    margin: 5% 0;
+    color: var(--standoutBright);
+}
+
+.card-body { 
+    padding: 0;
+}
+
+.add-post { 
+    margin-right: 3%;
 }
 
 .add-post button { 
-    width: 4rem;
-    height: 4rem;
-    margin-right: 30px;
+    width: 3rem;
+    height: 3rem;
     background-color: var(--standoutDark);
     color: var(--offWhite);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     border-radius: 50%;
     border: .5px solid var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add-post button:hover { 
     background-color: var(--dark-middle);
     color: var(--offWhite);
-}
-
-.post-card {
-    padding: 1%;
-    margin: 0.5%;
-    border: solid;
-    border-color: darkgreen;
-    border-radius: 10px;
-
 }
 
 

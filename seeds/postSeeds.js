@@ -18,6 +18,20 @@ const userPost = [
         body: "If you live in Orlando, run to Nana's Nursery this week. They are selling mid-to full grown palm trees for less than $100. These gorgeous trees bring that tropical feel to your home",
         type:"Large-Scale Trees",
         user_id: 3
+    },
+    
+    {
+        title:"Early blooms?",
+        body: "I've only had my orange trees for 3 years but this year they seem to be blooming particularly early...Anyone else see that?",
+        type:"Large-Scale Trees",
+        user_id: 3
+    },
+    
+    {
+        title:"HELP - my hibiscus have spots!!! ",
+        body: "There are grey spots on the leaves and stems of my hibiscus! They look like raised beads. I thought I saw something on the tree yesterday but I figured it was the light catching my eyes...",
+        type:"Large-Scale Trees",
+        user_id: 3
     }
 ]
 

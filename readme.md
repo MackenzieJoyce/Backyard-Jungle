@@ -7,7 +7,7 @@ This repository is a fork of a group project. I am the sole contributor to this 
 
 ![image](./public/img/BG_Home.png)
 ![image](./public/img/BG_About.png)
-
+![image](./public/img/BG_Specific-Forum.png)
 
 ## Built with:
 -HTML

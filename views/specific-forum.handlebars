@@ -1,18 +1,14 @@
 <div>
-  <div class="page-intro">
-    <h2>{{name}}</h2>
-  </div>
-
   <div class="specific-forum-content">
 
-    <div class="specific-category-list">
-      <aside class="list-group">
-        <h3>Communities</h3>
+    <aside class="category-aside">
+      <h3>Communities</h3>
+      <ul class="list-group list-group-flush">
         {{#each categories as |category|}}
-        {{> category-list}}
+        {{>category-list}}
         {{/each}}
-      </aside>
-    </div>
+      </ul>
+    </aside>
 
     <div class="specific-forum-post">
       {{#each cposts as |post|}}
