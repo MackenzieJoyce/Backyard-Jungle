@@ -5,10 +5,6 @@ Welcome to the GitHub page for Backyard Jungle, the site for all plant lovers!
 This repository is a fork of a group project. I am the sole contributor to this fork. The names of previous contributors are listed in the contact section below. 
 
 
-![image](./public/img/BG_Home.png)
-![image](./public/img/BG_About.png)
-![image](./public/img/BG_Specific-Forum.png)
-
 ## Built with:
 -HTML
 
@@ -33,6 +29,13 @@ This repository is a fork of a group project. I am the sole contributor to this 
 -mysql2
 
 -Dotenv
+
+
+![image](./public/img/BG_Home.png)
+![image](./public/img/BG_About.png)
+![image](./public/img/BG_Contact.png)
+![image](./public/img/BG_Specific-Forum.png)
+
 
 ## Usage
  Using our site plant lovers may look up flowers, trees, and all sorts of plants thant they are interested in. They can chose to add them to their garden (or collection of plants). Users can also learn about species of plants and join communities where other garden-lovers, tree-lovers, sustainable-food-lovers post tips and tricks on their growing techniques.
